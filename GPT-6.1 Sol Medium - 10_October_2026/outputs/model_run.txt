@@ -1,0 +1,34 @@
+             model strategy  predictor_parameters   n  events  prevalence  mean_prediction      auc    brier  log_loss  calibration_in_large  calibration_intercept  calibration_slope
+         intercept     year                     0 999     273    0.273273         0.272160 0.352751 0.200557  0.591400              0.005617                    NaN                NaN
+         intercept    state                     0 999     273    0.273273         0.274654 0.342120 0.201517  0.593897             -0.006947                    NaN                NaN
+         intercept temporal                     0 625     163    0.260800         0.294118 0.500000 0.193893  0.576629             -0.166346                    NaN                NaN
+          moisture     year                     1 999     273    0.273273         0.272273 0.541342 0.199517  0.588195              0.005115              -0.601078           0.379468
+          moisture    state                     1 999     273    0.273273         0.274014 0.536254 0.199363  0.587399             -0.003780              -0.550702           0.434519
+          moisture temporal                     1 625     163    0.260800         0.284360 0.571920 0.190569  0.567713             -0.120334               0.009486           1.143534
+     moisture_temp     year                     2 999     273    0.273273         0.273205 0.615768 0.193233  0.574137              0.000360              -0.213201           0.772857
+     moisture_temp    state                     2 999     273    0.273273         0.284252 0.604421 0.196498  0.580317             -0.057831              -0.402403           0.609965
+     moisture_temp temporal                     2 625     163    0.260800         0.313157 0.627752 0.189022  0.562831             -0.278158              -0.468379           0.726938
+moisture_temp_quad     year                     3 999     273    0.273273         0.273460 0.614300 0.193908  0.576961             -0.000984              -0.289765           0.692287
+      temp_earlier     year                     2 999     273    0.273273         0.272870 0.589895 0.196093  0.582194              0.002099              -0.361332           0.619714
+       temp_remote     year                     2 999     273    0.273273         0.270295 0.544990 0.199638  0.589191              0.015392              -0.591517           0.382294
+Prefit: {'events': 273, 'nonevents': 726, 'profiles_with_events': 171, 'profiles_with_nonevents': 427, 'mixed_profiles': 53, 'years_with_events': 23, 'states_with_events': 13}
+Warning count: 0
+                       model                  metric     lower    upper  resamples
+                   intercept                     auc  0.273338 0.424831       1000
+                   intercept                   brier  0.173456 0.223266       1000
+                    moisture                     auc  0.445171 0.624514       1000
+                    moisture                   brier  0.172740 0.221511       1000
+               moisture_temp                     auc  0.528015 0.712630       1000
+               moisture_temp                   brier  0.162634 0.218229       1000
+          moisture_temp_quad                     auc  0.524733 0.712848       1000
+          moisture_temp_quad                   brier  0.162544 0.219606       1000
+                temp_earlier                     auc  0.524701 0.667432       1000
+                temp_earlier                   brier  0.165402 0.219597       1000
+                 temp_remote                     auc  0.451684 0.620972       1000
+                 temp_remote                   brier  0.173194 0.222442       1000
+moisture_temp minus moisture paired_brier_difference -0.013429 0.001294       1000
+        model           variant   n  events  prevalence  mean_prediction      auc    brier  log_loss  calibration_in_large  calibration_intercept  calibration_slope
+     moisture remove_duplicates 997     273    0.273821         0.272863 0.541507 0.199764  0.588717              0.004895              -0.598423           0.380520
+     moisture  profile_weighted 999     273    0.273273         0.265217 0.540777 0.199295  0.587947              0.041422              -0.579784           0.387542
+moisture_temp remove_duplicates 997     273    0.273821         0.273750 0.614494 0.193596  0.575003              0.000376              -0.215981           0.769413
+moisture_temp  profile_weighted 999     273    0.273273         0.269171 0.615733 0.193163  0.573890              0.021728              -0.195791           0.773814

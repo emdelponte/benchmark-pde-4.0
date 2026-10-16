@@ -1,0 +1,62 @@
+# Curated scorecard. Folder: "Claude Opus 5.5 - 10_October_2026"
+# Numbers copied from results.md / critical_assessment.md / comparison_with_literature.md in that folder.
+model: Claude Opus 5.5
+provider: Anthropic
+tagline: The candid skeptic
+verdict: Weather alone is too weak to forecast; weather plus host is the first model worth piloting.
+outcome: "S ≥ 10% (273 / 726). Chosen from prior knowledge of the convention and disclosed as such."
+
+weather_model:
+  label: "M1: mean RH + mean T, days −10…0"
+  n_params: 2
+  auc: 0.645
+  auc_lo: 0.554
+  auc_hi: 0.727
+  ci_method: "year bootstrap (1,000)"
+  brier: 0.192
+  cal_slope: 0.80
+
+host_model:
+  label: "M4: M1 + resistance + corn residue"
+  n_params: 6
+  auc: 0.702
+  auc_lo: 0.641
+  auc_hi: 0.760
+  ci_method: "year bootstrap (1,000)"
+  brier: 0.180
+  cal_slope: 0.83
+
+validation: "Leave-one-year-out (32 folds, primary), plus leave-one-state-out, a temporal split (≤2008 → 2009–15), and row-level CV to show how much it overstates."
+
+key_findings:
+  - "Mean RH carries essentially all the weather signal: OR 2.2 per +10 % RH (cluster-robust CI 1.5–3.3). Mean T adds nothing, and its sign flips across bootstrap resamples."
+  - "Missed its own pre-registered usefulness bar (AUC ≥ 0.65 with a clear Brier gain) by a hair; scaled Brier only 4 %."
+  - "Exploratory: the RH effect works only between state-years. Within a season-region it vanishes, so this is a regional season-risk index, not a field-level forecast."
+  - "Window tuning (−0.035 AUC), an RH×T interaction, splines, a duration variable and a 174-variable random forest all failed to beat M1."
+  - "Row-level CV would inflate the calibration slope from 0.80 to 0.94."
+  - "Post-literature (labelled as such): swapping mean T for temperature SD over 20 days lifts AUC to 0.693, or 0.729 with host. This is not independent confirmation."
+
+strengths:
+  - "Pre-specified a usefulness bar and then reported missing it."
+  - "Most complete validation design: year, state and temporal hold-outs, plus row-level CV to show the optimism."
+  - "Separates robust from exploratory findings explicitly."
+  - "The within/between decomposition shows what the RH signal actually is."
+
+concerns:
+  - "The code/ folder and analysis_log.md the prompt requires are not in the Drive folder (results.md cites code/03_models.py)."
+  - "The S ≥ 10% outcome came from prior knowledge, so it is not an independent choice. It was disclosed, though."
+  - "The literature comparison rests on abstracts and excerpts only, because full texts were blocked. It flags this itself."
+
+literature: "Published AUCs of 0.80–0.88 come from large candidate sets, host variables and non-season-grouped CV. It estimates that clustering and the missing type × corn term explain only about 0.03 of the gap, and proposes a common year-out protocol."
+
+rubric:
+  audit: 2
+  timing: 2
+  outcome: 1
+  parsimony: 2
+  validation: 2
+  calibration: 2
+  sensitivity: 2
+  negatives: 2
+  literature: 2
+  claims: 2

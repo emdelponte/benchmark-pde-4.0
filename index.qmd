@@ -1,0 +1,132 @@
+---
+title: "GenAI × Plant-Disease Epidemiology Benchmark"
+subtitle: "Can an autonomous agent build a defensible FHB risk model from weather known at anthesis?"
+date: today
+date-format: "D MMMM YYYY"
+language:
+  title-block-published: "Last rendered"
+format:
+  html:
+    theme:
+      light: flatly
+      dark: darkly
+    css: report.css
+    toc: true
+    toc-location: left
+    toc-depth: 2
+    embed-resources: true
+    page-layout: full
+    smooth-scroll: true
+params:
+  bench_dir: ""   # path to the Drive folder with one sub-folder per model run
+execute:
+  echo: false
+  warning: false
+  message: false
+---
+
+```{r}
+#| include: false
+# Empty bench_dir = use $BENCH_DIR, then the folder above this report, then the local Google Drive mount, then ./drive_mirror.
+source("bench_lib.R", encoding = "UTF-8")
+BENCH <- resolve_bench_dir(params$bench_dir)
+runs <- discover(BENCH)
+syn <- if (file.exists("synthesis.yml")) read_yaml_utf8("synthesis.yml") else list()
+uncovered <- Filter(function(r) !(r$slug %in% unlist(syn$covers)), runs)
+best <- function(key) {
+  c <- Filter(function(r) has_auc(r[[key]]), runs)
+  if (length(c)) c[[which.max(vapply(c, function(r) r[[key]]$auc, 0))]] else NULL
+}
+bh <- best("host_model")
+aucs <- unlist(lapply(runs, function(r) r$weather_model$auc))
+```
+
+```{r}
+#| output: asis
+first <- runs[[1]]$date; last <- runs[[length(runs)]]$date
+tiles <- list(
+  c(length(runs), paste0("model runs, added ", fdate(first), if (last != first) paste0(" – ", fdate(last)) else "")),
+  c(if (length(aucs)) sprintf("%s–%s", fmt(min(aucs), 2), fmt(max(aucs), 2)) else "–", "weather-only AUC range (year held out)"),
+  c(if (!is.null(bh)) fmt(bh$host_model$auc) else "–",
+    if (!is.null(bh)) sprintf("best with host terms (%s)", bh$model) else "no host model yet"),
+  c("0.80–0.90", "published AUCs, other validation")
+)
+t <- paste0(vapply(tiles, function(x) sprintf('<div class="tile"><div class="v">%s</div><div class="k">%s</div></div>', esc(x[1]), esc(x[2])), ""), collapse = "")
+html_block(paste0(
+  '<div class="hero"><div class="kicker">Fusarium head blight · USWBSI dataset v2.1 · 999 plots · 273 epidemics · 32 years · 17 states</div>',
+  '<div class="tiles">', t, '</div>',
+  sprintf('<p class="muted small">Rebuilt from <code>%s</code> on %s. ', esc(basename(BENCH)), fdate(Sys.Date(), "%d %B %Y")),
+  'Every sub-folder named “Model - DD_Month_YYYY” becomes an entry, dated by its folder name.</p></div>'))
+```
+
+## The bottom line
+
+```{r}
+#| output: asis
+if (length(uncovered))
+  html_block(sprintf('<p class="notice">This synthesis was written on %s and does not yet cover: <strong>%s</strong>. Their numbers do appear in the charts and tables below.</p>',
+                     esc(syn$written %||% "?"), esc(paste(vapply(uncovered, `[[`, "", "model"), collapse = ", "))))
+if (length(syn)) {
+  pts <- paste0(vapply(syn$points, function(p) sprintf("<div><h4>%s</h4>%s</div>", esc(p$title), esc(p$text)), ""), collapse = "")
+  html_block(sprintf('<p class="bottom-line">%s</p><div class="points">%s</div>', esc(syn$bottom_line), pts))
+}
+```
+
+## How well did they predict?
+
+The task was to predict an FHB epidemic (FHB index ≥ 10%) with logistic regression on at most three weather terms available by anthesis. Each agent also fitted an optional model that adds cultivar resistance (and corn residue for Claude), which is also known at anthesis. All values are pooled out-of-fold predictions with one year held out at a time. Hover a mark to see Brier score, calibration slope and how each CI was computed.
+
+```{r}
+#| output: asis
+html_block(auc_forest(runs))
+```
+
+::: {.callout-note collapse="true"}
+## Why the CIs are not equally wide
+Claude and GPT bootstrap whole years, which respects the seasonal clustering. Gemini does not state its CI method, and its intervals are about half as wide on the same data, which suggests row-level resampling. Read Gemini's intervals as optimistic. The shaded band shows published AUCs for this dataset lineage (Shah et al. 2021–2023; Peng et al. 2024). Those models use larger predictor sets, often post-anthesis or host terms, and random or stratified CV, so they are a different estimand and not a target.
+:::
+
+```{r}
+#| output: asis
+html_block(metrics_table(runs))
+```
+
+## Where they agree and where they diverge
+
+```{r}
+#| output: asis
+html_block(consensus_matrix(runs, "consensus.yml"))
+html_block('<p class="muted small">✓ agrees · ~ partly · ✗ disagrees · – not tested. Curated in <code>consensus.yml</code>; new runs show “not assessed yet” until added.</p>')
+```
+
+## Skill is not the same as science
+
+The benchmark prompt says outright that it is *not* about the highest AUC. It asks whether an agent can "design, execute, critique, and improve a scientifically defensible" analysis. So each run is also scored 0–2 on ten behaviours drawn from the prompt's own requirements.
+
+```{r}
+#| output: asis
+html_block(skill_vs_rigor(runs))
+html_block(rubric_heatmap(runs))
+if (!is.null(syn$caveat)) html_block(sprintf('<p class="caveat">%s</p>', esc(syn$caveat)))
+```
+
+## Model by model
+
+```{r}
+#| output: asis
+html_block(paste0('<div class="cards">', paste(vapply(rev(runs), model_card, ""), collapse = ""), "</div>"))
+```
+
+## Timeline of additions
+
+```{r}
+#| output: asis
+html_block(timeline(runs))
+```
+
+::: {.callout-tip collapse="true"}
+## Adding a new model or version
+1. Drop the agent's output folder into the benchmark Drive folder, named `Model name - DD_Month_YYYY` (for example `Claude Opus 6 - 02_December_2026`). The date in the name becomes the entry date. If the name has no date, the folder's timestamp is used.
+2. Re-render with `quarto render index.qmd`. By default the report reads your local Google Drive mount of `01_GenAI_PDE_benchmark`. To point it somewhere else, render with `quarto render index.qmd -P bench_dir:/path/to/folder`, or set `BENCH_DIR` first. The folder is picked up automatically. Its card is auto-extracted from `results.md` (headline plus the first AUC with a CI) and marked *auto*.
+3. To curate it, copy one of the files in `scorecards/` to `scorecards/<slug>.yml`, where the slug is shown on the card, fill it in, add a column to `consensus.yml`, and refresh `synthesis.yml`. The report flags any run the synthesis does not yet cover.
+:::

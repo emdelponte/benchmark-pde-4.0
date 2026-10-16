@@ -1,0 +1,7 @@
+file,bytes,md5,sha256,source
+VariablesMetaData.csv,45772,md5:6553faf6463fcadf82960d57730113b1,9fb56abe236ada27a0f03d5fc163feef4ffc0513be0ef81d122ca5426ce9c4e9,https://zenodo.org/api/records/23189372/files/VariablesMetaData.csv/content
+FHBVer2Codebook.html,10920153,md5:9521ee835837c3c97072a47785165707,2bf6681e174dc22b8be4a0446da4fb4e1cae255fc17be5400368768c495d0b29,https://zenodo.org/api/records/23189372/files/FHBVer2Codebook.html/content
+FHBVer2.csv,2734991,md5:968314b6017d31ed5fee74fb0e40b7f6,9833bba666a30a2ffee96344b6b5bb11e1e3863b8379eac8f4a3b3c4b3e5332b,https://zenodo.org/api/records/23189372/files/FHBVer2.csv/content
+README.txt,6022,md5:e964800dec97844e225549af632a587e,9e74ba970d9fda7967ace5668fd84d1ffa51d8cf71524e1250cdfe26257450ab,https://zenodo.org/api/records/23189372/files/README.txt/content
+FHBVer2.parquet,1025846,md5:ba455c9687fbe7fd975b79102d031663,a48efa5989a3679b6358692db97f798f94a937f96a479c5272676e10ff1031b3,https://zenodo.org/api/records/23189372/files/FHBVer2.parquet/content
+FHBVer2DataDict.yaml,350744,md5:6365e99efcd0b14fda24bb2454ef5165,9ec1d2b603bf14182506d2539151c43713d04ef9e292cdf64f7c047d7de8d540,https://zenodo.org/api/records/23189372/files/FHBVer2DataDict.yaml/content

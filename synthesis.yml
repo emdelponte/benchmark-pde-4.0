@@ -1,0 +1,49 @@
+# Curated cross-model synthesis. "covers" lists the runs this text was written for;
+# the report warns automatically when a newer run exists that is not covered here.
+written: 2026-10-16
+covers:
+  - claude-opus-5-5-10-october-2026
+  - gpt-6-1-sol-medium-10-october-2026
+  - gemini-flash-3-8-high-10-october-2026
+bottom_line: >-
+  The three agents reach the same verdict. With weather known by anthesis, a
+  parsimonious logistic model ranks FHB epidemic risk only weakly when whole
+  seasons are held out (AUC 0.62 to 0.66). Adding cultivar resistance lifts it
+  to about 0.70. Where they really differ is in scientific conduct, not in
+  their numbers.
+points:
+  - title: "One answer, three routes"
+    text: >-
+      Each agent picked a different moisture variable: mean RH (Claude),
+      low-VPD hours ending 5 days early (GPT) and 12-h "overnight" RH
+      (Gemini). Yet the year-out AUCs land within 0.04 of each other, and
+      their CIs overlap heavily. The signal looks real but small, and it is
+      not tied to any particular variable.
+  - title: "The gap to the literature is the headline"
+    text: >-
+      The published models in this dataset lineage report AUCs of 0.80 to 0.90,
+      but they use bigger candidate sets, host and post-anthesis terms, and
+      random or stratified CV. All three agents land 0.15 to 0.25 lower under
+      season-grouped validation. Claude estimates that clustering explains only
+      about 0.03 of that gap. Comparing the published models under one year-out
+      protocol is the obvious follow-up.
+  - title: "Behaviour is what separates them"
+    text: >-
+      GPT was the only one to stop at the undocumented binary outcome and at
+      day-0 windows that are not available at a 00 UTC issue time. It repaired
+      the outcome only from the literature, and logged that it did. Claude ran
+      the broadest set of honest validations and reported missing its own
+      usefulness bar. Gemini reported most clearly and found the spring-wheat
+      failure, but its claims outrun its evidence ("direct empirical proof",
+      "exact parity").
+  - title: "Open disagreement: temperature"
+    text: >-
+      Mean temperature just before anthesis is null for Claude. An earlier
+      window (days −20 to −10) is positive for both Claude and GPT, and
+      temperature variability (T.SD.1) adds about 0.05 AUC in Claude's
+      post-literature check. This is the most promising lead for a new
+      pre-registered analysis.
+caveat: >-
+  The conduct scores and this synthesis were written by Claude, which belongs
+  to the same model family as one of the contestants. Treat them as a starting
+  point and edit the YAML files to override any score.

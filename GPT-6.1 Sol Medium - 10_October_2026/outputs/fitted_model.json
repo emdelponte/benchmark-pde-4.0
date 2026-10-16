@@ -1,0 +1,31 @@
+{
+  "target": "S >= 10 percent",
+  "phase": "literature-informed continuation",
+  "models": {
+    "moisture": {
+      "terms": [
+        "VPD.L635.CHD.1"
+      ],
+      "coefficients": {
+        "intercept": -2.207773488385261,
+        "VPD.L635.CHD.1": 0.19337811005654423
+      }
+    },
+    "moisture_temp": {
+      "terms": [
+        "VPD.L635.CHD.1",
+        "T.A.2"
+      ],
+      "coefficients": {
+        "intercept": -3.023409185151909,
+        "VPD.L635.CHD.1": 0.2823227020169504,
+        "T.A.2": 0.7827087878537732
+      }
+    }
+  },
+  "scaling": {
+    "VPD.L635.CHD.1": "hours / 24",
+    "T.A.2": "(degC - 15) / 5"
+  },
+  "timing": "all source windows end strictly before day 0; YAML closed intervals"
+}

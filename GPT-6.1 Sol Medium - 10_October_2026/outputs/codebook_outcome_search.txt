@@ -1,0 +1,4 @@
+FHB index, or severity of FHB symptoms on the spike (as a
+FHB index, or severity of FHB symptoms on the spike (as
+FHB index, or severity of FHB symptoms on the spike (as
+      "description": "FHB index, or severity of FHB symptoms on the spike (as a percentage)",

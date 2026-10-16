@@ -1,0 +1,120 @@
+{
+  "rows": 999,
+  "columns": 337,
+  "weather_columns": 329,
+  "responses": [
+    {
+      "name": "S",
+      "description": "FHB index, or severity of FHB symptoms on the spike",
+      "unit": "percent",
+      "type": "numeric",
+      "category": "response",
+      "missing_pct": 0.0,
+      "range": {
+        "min": 0.0,
+        "max": 86.18
+      },
+      "valid_range": {
+        "min": 0.0,
+        "max": 100.0
+      }
+    }
+  ],
+  "schema_missing_in_yaml": [],
+  "schema_missing_in_parquet": [],
+  "year_min": 1982,
+  "year_max": 2015,
+  "years": 32,
+  "states": 17,
+  "missing": {
+    "corn": 4
+  },
+  "S": {
+    "count": 999.0,
+    "mean": 8.813016792745486,
+    "std": 13.703410164451734,
+    "min": 0.0,
+    "25%": 0.1966666666666675,
+    "50%": 2.868139225,
+    "75%": 11.314166666666667,
+    "max": 86.18
+  },
+  "S_zero": 186,
+  "weather_profiles": 545,
+  "state_years": 142,
+  "state_dates": 492,
+  "weather_profile_max_size": 8,
+  "profile_singletons": 280,
+  "profiles_with_multiple_rows": 265,
+  "duplicate_rows_excluding_id": 2,
+  "weather_effective_size_proxy": 395.2479207920792,
+  "period_counts": {
+    "pre": 174,
+    "post": 137,
+    "pre-post": 18
+  },
+  "pre_day0": 151,
+  "strict_pre": [
+    "T.A.1",
+    "T.A.2",
+    "T.A.3",
+    "D.A.2",
+    "D.A.3",
+    "P.A.1",
+    "P.A.2",
+    "P.A.3",
+    "P.A.4",
+    "P.A.5",
+    "T.G30.CHD.2",
+    "TRH.15T30nRHG80.CHD.2",
+    "TRH.15T30nRHG90.CHD.2",
+    "VPD.L11.CHD.1",
+    "VPD.L635.CHD.1",
+    "RH.G70.CD.1",
+    "T.14T22.CD.2",
+    "RH.MINMAXDIFF.1",
+    "P.MINMAXDIFF.1",
+    "D.MINMAXDIFF.2",
+    "D.SD.2",
+    "P.SD.1",
+    "RH.SD.2"
+  ],
+  "metadata_only": [],
+  "weather_missing_csv_metadata": [],
+  "csv_numeric_equal": true,
+  "identical_weather_pairs": [
+    [
+      "RH.A.2",
+      "RH10"
+    ],
+    [
+      "RH.G80.CHD.2",
+      "RH8010"
+    ],
+    [
+      "RH.G90.CHD.2",
+      "RH9010"
+    ],
+    [
+      "TRH.15T30nRHG80.CHD.3",
+      "TRH8010"
+    ],
+    [
+      "TRH.15T30nRHG90.CHD.3",
+      "TRH9010"
+    ]
+  ],
+  "schema_issue_columns": [],
+  "versions": {
+    "pandas": "3.0.6",
+    "pyarrow": "26.0.0",
+    "PyYAML": "6.0.3",
+    "numpy": "2.5.3",
+    "scipy": "1.18.1",
+    "statsmodels": "0.15.0",
+    "scikit-learn": "1.9.1",
+    "matplotlib": "3.11.2"
+  },
+  "python": "3.12.14",
+  "system": "macOS-26.3.1-arm64-arm-64bit"
+}

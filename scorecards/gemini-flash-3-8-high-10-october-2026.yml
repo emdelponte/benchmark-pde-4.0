@@ -1,0 +1,62 @@
+# Curated scorecard. Folder: "Gemini Flash 3.8 high - 10_October_2026"
+model: Gemini Flash 3.8 high
+provider: Google
+tagline: The confident storyteller
+verdict: Solid numbers and a useful spring-wheat finding, wrapped in claims stronger than its evidence.
+outcome: "S ≥ 10% (273 / 726). It noted that no binary column exists, then called the threshold 'documented' by USWBSI convention."
+
+weather_model:
+  label: "M2: overnight RH (7 d) + hours 9–30 °C (7 d)"
+  n_params: 2
+  auc: 0.656
+  auc_lo: 0.619
+  auc_hi: 0.692
+  ci_method: "not stated; likely row-level (narrower than year bootstrap)"
+  brier: 0.188
+  cal_slope: 0.85
+
+host_model:
+  label: "M5: M2 + resistance (3 dummies)"
+  n_params: 5
+  auc: 0.708
+  auc_lo: 0.673
+  auc_hi: 0.743
+  ci_method: "not stated; likely row-level"
+  brier: 0.180
+  cal_slope: 0.85
+
+validation: "Leave-one-year-out (32 folds) only, with cluster-robust SEs by year-state-flowering-date environment."
+
+key_findings:
+  - "Overnight RH is the strongest single predictor. Thermal-hours adds a little (OR 1.024 per hour)."
+  - "Resistance is strongly monotone: odds ratio vs VS is 0.55 (S), 0.30 (MS) and 0.18 (MR). It lifts AUC to 0.708."
+  - "The RH×T interaction improved AIC but validated worse (AUC 0.651, slope 0.79)."
+  - "A 2-variable random forest failed: AUC 0.600, negative Brier skill, slope 0.46."
+  - "Distinct finding: the model works for winter wheat (AUC 0.664) but not spring wheat in ND/MN (AUC 0.562, slope 0.12)."
+  - "Window length barely matters (7 / 10 / 14 d all ≈ 0.65)."
+
+strengths:
+  - "Clear, readable reporting with equations, decile calibration tables and threshold and wheat-class stratification."
+  - "The spring vs winter wheat split is the most actionable transportability finding of the three."
+  - "Good audit of the clustering and collinearity structure."
+
+concerns:
+  - "Overclaims: 'direct empirical proof', 'zero information leakage', 'exact empirical parity' with the literature, and 'clinical deployment'."
+  - "The 12H window is 20:00–08:00 UTC (≈ afternoon to early morning in US local time), yet it is interpreted as nocturnal dew biology. Its own audit had noted the UTC convention."
+  - "It used day-0-ending windows without discussing availability at the issue time."
+  - "Its AUC CIs are much narrower than year-bootstrap CIs on the same data, so the uncertainty is probably understated (inferred)."
+  - "Its literature claims are partly unsupported. It says trees do not beat LR, citing Shah 2014, but does not engage with Shah 2023, where RF was superior. The 'published 0.65–0.72' range is unsourced."
+
+literature: "Claims its results match the published pre-anthesis performance and that earlier window tuning was redundant. It gives little sourcing and does not separate estimands."
+
+rubric:
+  audit: 2
+  timing: 1
+  outcome: 1
+  parsimony: 2
+  validation: 1
+  calibration: 1
+  sensitivity: 2
+  negatives: 1
+  literature: 1
+  claims: 0

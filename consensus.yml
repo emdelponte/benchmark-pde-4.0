@@ -1,0 +1,48 @@
+# Cross-model findings matrix. One entry per claim; per-model status keyed by scorecard slug.
+# status: yes | no | partial | na   (missing slug = "not assessed yet", shown automatically for new models)
+claims:
+  - claim: "Pre-anthesis weather alone gives only weak discrimination (AUC ≈ 0.6–0.66)"
+    models:
+      claude-opus-5-5-10-october-2026: {status: yes, note: "0.645"}
+      gpt-6-1-sol-medium-10-october-2026: {status: yes, note: "0.616"}
+      gemini-flash-3-8-high-10-october-2026: {status: yes, note: "0.656"}
+  - claim: "Moisture (RH / VPD) carries most of the weather signal"
+    models:
+      claude-opus-5-5-10-october-2026: {status: yes, note: "mean RH; T null"}
+      gpt-6-1-sol-medium-10-october-2026: {status: partial, note: "moisture alone 0.54; needs T"}
+      gemini-flash-3-8-high-10-october-2026: {status: yes, note: "overnight RH"}
+  - claim: "Temperature adds predictive information"
+    models:
+      claude-opus-5-5-10-october-2026: {status: partial, note: "no (d −10…0), yes (d −20…−10)"}
+      gpt-6-1-sol-medium-10-october-2026: {status: yes, note: "OR 2.2 per 5 °C"}
+      gemini-flash-3-8-high-10-october-2026: {status: yes, note: "small, OR 1.02/h"}
+  - claim: "Host resistance adds ≈ +0.05 AUC over weather"
+    models:
+      claude-opus-5-5-10-october-2026: {status: yes, note: "+0.059 (with corn)"}
+      gpt-6-1-sol-medium-10-october-2026: {status: partial, note: "not fitted; shows miscalibration by class"}
+      gemini-flash-3-8-high-10-october-2026: {status: yes, note: "+0.053"}
+  - claim: "Interactions / nonlinear terms do not help"
+    models:
+      claude-opus-5-5-10-october-2026: {status: yes, note: "RH×T, splines"}
+      gpt-6-1-sol-medium-10-october-2026: {status: yes, note: "quadratic T"}
+      gemini-flash-3-8-high-10-october-2026: {status: yes, note: "RH×T"}
+  - claim: "Random forest does not beat logistic regression"
+    models:
+      claude-opus-5-5-10-october-2026: {status: yes, note: "+0.015, CI spans 0"}
+      gpt-6-1-sol-medium-10-october-2026: {status: na, note: "not run"}
+      gemini-flash-3-8-high-10-october-2026: {status: yes, note: "0.600 (2 vars only)"}
+  - claim: "Exposure-window length barely matters"
+    models:
+      claude-opus-5-5-10-october-2026: {status: yes, note: "5–15 d: 0.637–0.649"}
+      gpt-6-1-sol-medium-10-october-2026: {status: no, note: "earlier T windows degrade"}
+      gemini-flash-3-8-high-10-october-2026: {status: yes, note: "7/10/14 d ≈ equal"}
+  - claim: "Pooled calibration hides group-level miscalibration"
+    models:
+      claude-opus-5-5-10-october-2026: {status: yes, note: "years compressed; MO, PA"}
+      gpt-6-1-sol-medium-10-october-2026: {status: yes, note: "by state and resistance"}
+      gemini-flash-3-8-high-10-october-2026: {status: yes, note: "spring wheat slope 0.12"}
+  - claim: "Row-level / random CV would be optimistic"
+    models:
+      claude-opus-5-5-10-october-2026: {status: yes, note: "quantified (+0.016 AUC)"}
+      gpt-6-1-sol-medium-10-october-2026: {status: yes, note: "argued, not quantified"}
+      gemini-flash-3-8-high-10-october-2026: {status: yes, note: "argued, not quantified"}

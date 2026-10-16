@@ -1,0 +1,54 @@
+# Curated scorecard. Folder: "GPT-6.1 Sol Medium - 10_October_2026"
+model: GPT-6.1 Sol Medium
+provider: OpenAI
+tagline: The strict auditor
+verdict: Refused to model an undocumented outcome; once repaired from the literature, it found a weak, poorly calibrated weather-only signal.
+outcome: "Independent phase: no binary outcome documented, so it fitted nothing. Later phase: adopted S ≥ 10% from Shah et al. 2021, with a revision logged before fitting."
+
+weather_model:
+  label: "Low-VPD hours (d −15…−5) + mean T (d −20…−10)"
+  n_params: 2
+  auc: 0.616
+  auc_lo: 0.528
+  auc_hi: 0.713
+  ci_method: "year-block bootstrap (1,000)"
+  brier: 0.193
+  cal_slope: 0.77
+
+host_model: null
+
+validation: "Leave-one-year-out (primary), leave-one-state-out, and a temporal split (1982–2008 → 2009–15). All coefficients are fitted within folds, with no selection or tuning."
+
+key_findings:
+  - "Strictest timing screen of the three: 151 of 174 'pre-anthesis' summaries include day 0, so they are ineligible at a 00 UTC issue time. Only windows ending before day 0 were used."
+  - "Found that the CSV window lengths disagree with the YAML by one day for all 329 weather variables."
+  - "The two-term model beats moisture alone (AUC 0.616 vs 0.541), but the paired Brier gain CI crosses zero (−0.013 to 0.001)."
+  - "A quadratic third term added nothing. Swapping in an earlier temperature window degraded AUC to 0.59 / 0.55."
+  - "Weather-only risk is badly miscalibrated by cultivar: VS observed 47 % vs predicted 27 %; MR 13 % vs 27 %."
+  - "The temporal hold-out overpredicts (31 % predicted vs 26 % observed). The state-out calibration slope is 0.61."
+
+strengths:
+  - "Model behaviour on the outcome gate: declined to invent a target, froze an independent snapshot, then documented the literature-based repair."
+  - "Deepest metadata and timing audit (UTC issue time, closed-window conventions, duplicates, profile counts)."
+  - "Preserves first-run failures and warnings. Nothing was silently replaced."
+  - "Most careful wording about what the intervals do and do not cover."
+
+concerns:
+  - "No host-augmented model was fitted, so it gives no 'best usable' model to compare with the other two."
+  - "The moisture-window sensitivity is unresolved, and its sensitivity analyses are thinner overall."
+  - "Very dense, hedged prose that is hard to read for a non-statistician."
+  - "Its predictors are not comparable with the other two (strict lead windows), so its lower AUC partly reflects a stricter task."
+
+literature: "Treats the published numbers as different estimands (wider timing, agronomic covariates, random CV), not as replication failures. It declined to use the near-perfect 2024 BRT AUCs as a benchmark."
+
+rubric:
+  audit: 2
+  timing: 2
+  outcome: 2
+  parsimony: 2
+  validation: 2
+  calibration: 2
+  sensitivity: 1
+  negatives: 2
+  literature: 2
+  claims: 2

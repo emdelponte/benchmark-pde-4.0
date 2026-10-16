@@ -1,0 +1,12 @@
+{
+  "checks": [
+    "All downloaded SHA256s and independent-snapshot hashes match",
+    "All 12 performance rows match saved predictions",
+    "No duplicate test IDs; 999 predictions per grouped strategy/model",
+    "Temporal test IDs match years >=2009",
+    "All specifications use <=3 predictor parameters",
+    "Independent BFGS reproduces all year-out primary predictions within 1e-6",
+    "Final model warning log empty; numerical/schema audit has no flagged columns"
+  ],
+  "independent_prediction_max_abs_error": 1.2333575272194253e-09
+}

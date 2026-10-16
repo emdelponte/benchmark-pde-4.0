@@ -1,0 +1,330 @@
+﻿"origin","variable_type","variable_name","summary","period","type","metric","time_step","day","win_start_day","win_start_period","win_end_day","win_end_period","win_length"
+"Shah et al. (2019)","T.A","T.A.1","Daily mean T","pre","T","mean","daily","24h",25,"pre",15,"pre",10
+"Shah et al. (2019)","T.A","T.A.2","Daily mean T","pre","T","mean","daily","24h",20,"pre",10,"pre",10
+"Shah et al. (2019)","T.A","T.A.3","Daily mean T","pre","T","mean","daily","24h",40,"pre",30,"pre",10
+"Shah et al. (2021)","T.A","T.A.4","Daily mean T","post","T","mean","daily","24h",0,"anthesis",10,"post",10
+"Shah et al. (2019)","T.A","T.A.5","Daily mean T","post","T","mean","daily","24h",0,"anthesis",20,"post",20
+"Shah et al. (2021)","D.A","D.A.1","Daily mean D","pre","D","mean","daily","24h",20,"pre",0,"anthesis",20
+"Shah et al. (2021)","D.A","D.A.2","Daily mean D","pre","D","mean","daily","24h",20,"pre",10,"pre",10
+"Shah et al. (2021)","D.A","D.A.3","Daily mean D","pre","D","mean","daily","24h",40,"pre",25,"pre",15
+"Shah et al. (2021)","P.A","P.A.1","Daily mean P","pre","P","mean","daily","24h",40,"pre",20,"pre",20
+"Shah et al. (2021)","P.A","P.A.2","Daily mean P","pre","P","mean","daily","24h",45,"pre",35,"pre",10
+"Shah et al. (2021)","P.A","P.A.3","Daily mean P","pre","P","mean","daily","24h",60,"pre",50,"pre",10
+"Shah et al. (2021)","P.A","P.A.4","Daily mean P","pre","P","mean","daily","24h",80,"pre",70,"pre",10
+"Shah et al. (2021)","P.A","P.A.5","Daily mean P","pre","P","mean","daily","24h",100,"pre",60,"pre",40
+"Shah et al. (2019)","RH.A","RH.A.1","Daily mean RH","pre","RH","mean","daily","24h",20,"pre",0,"anthesis",20
+"Shah et al. (2021)","RH.A","RH.A.2","Daily mean RH","post","RH","mean","daily","24h",0,"anthesis",10,"post",10
+"Shah et al. (2019)","RH.A","RH.A.3","Daily mean RH","pre-post","RH","mean","daily","24h",10,"pre",10,"post",20
+"Shah et al. (2021)","VPD.A","VPD.A.1","Daily mean VPD","pre","VPD","mean","daily","24h",10,"pre",0,"anthesis",10
+"Shah et al. (2021)","VPD.A","VPD.A.2","Daily mean VPD","pre","VPD","mean","daily","24h",20,"pre",0,"anthesis",20
+"Shah et al. (2021)","VPD.A","VPD.A.3","Daily mean VPD","post","VPD","mean","daily","24h",0,"anthesis",15,"post",15
+"Shah et al. (2021)","VPD.A","VPD.A.4","Daily mean VPD","post","VPD","mean","daily","24h",0,"anthesis",20,"post",20
+"Shah et al. (2021)","VPD.A","VPD.A.5","Daily mean VPD","pre-post","VPD","mean","daily","24h",10,"pre",10,"post",20
+"Shah et al. (2021)","TDD.A","TDD.A.1","Daily mean TDD","pre","TDD","mean","daily","24h",20,"pre",0,"anthesis",20
+"Shah et al. (2021)","TDD.A","TDD.A.2","Daily mean TDD","pre","TDD","mean","daily","24h",30,"pre",0,"anthesis",30
+"Shah et al. (2021)","TDD.A","TDD.A.3","Daily mean TDD","post","TDD","mean","daily","24h",0,"anthesis",10,"post",10
+"Shah et al. (2021)","TDD.A","TDD.A.4","Daily mean TDD","post","TDD","mean","daily","24h",0,"anthesis",20,"post",20
+"Shah et al. (2021)","TDD.A","TDD.A.5","Daily mean TDD","pre-post","TDD","mean","daily","24h",10,"pre",5,"post",15
+"Shah et al. (2021)","TDD.A","TDD.A.6","Daily mean TDD","pre-post","TDD","mean","daily","24h",10,"pre",10,"post",20
+"Shah et al. (2021)","RH.G80.CHD","RH.G80.CHD.1","No. hr RH >= 80","pre","RH","count","hourly","24h",20,"pre",0,"anthesis",20
+"Shah et al. (2021)","RH.G80.CHD","RH.G80.CHD.2","No. hr RH >= 80","post","RH","count","hourly","24h",0,"anthesis",10,"post",10
+"Shah et al. (2021)","RH.G80.CHD","RH.G80.CHD.3","No. hr RH >= 80","pre-post","RH","count","hourly","24h",20,"pre",10,"post",30
+"Shah et al. (2019)","RH.G90.CHD","RH.G90.CHD.1","No. hr RH >= 90","pre","RH","count","hourly","24h",20,"pre",0,"anthesis",20
+"Shah et al. (2019)","RH.G90.CHD","RH.G90.CHD.2","No. hr RH >= 90","post","RH","count","hourly","24h",0,"anthesis",10,"post",10
+"Shah et al. (2019)","RH.G90.CHD","RH.G90.CHD.3","No. hr RH >= 90","pre-post","RH","count","hourly","24h",50,"pre",10,"post",60
+"Shah et al. (2021)","T.G30.CHD","T.G30.CHD.1","No. hr T > 30","pre","T","count","hourly","24h",20,"pre",0,"anthesis",20
+"Shah et al. (2021)","T.G30.CHD","T.G30.CHD.2","No. hr T > 30","pre","T","count","hourly","24h",60,"pre",40,"pre",20
+"Shah et al. (2021)","T.G30.CHD","T.G30.CHD.3","No. hr T > 30","post","T","count","hourly","24h",10,"post",20,"post",10
+"Shah et al. (2019)","TRH.15T30nRHG80.CHD","TRH.15T30nRHG80.CHD.1","No. hr 15 <= T <= 30 & RH >= 80","pre","TRH","count","hourly","24h",30,"pre",0,"anthesis",30
+"Shah et al. (2019)","TRH.15T30nRHG80.CHD","TRH.15T30nRHG80.CHD.2","No. hr 15 <= T <= 30 & RH >= 80","pre","TRH","count","hourly","24h",60,"pre",40,"pre",20
+"Shah et al. (2019)","TRH.15T30nRHG80.CHD","TRH.15T30nRHG80.CHD.3","No. hr 15 <= T <= 30 & RH >= 80","post","TRH","count","hourly","24h",0,"anthesis",10,"post",10
+"Shah et al. (2021)","TRH.15T30nRHG90.CHD","TRH.15T30nRHG90.CHD.1","No. hr 15 <= T <= 30 & RH >= 90","pre","TRH","count","hourly","24h",30,"pre",0,"anthesis",30
+"Shah et al. (2021)","TRH.15T30nRHG90.CHD","TRH.15T30nRHG90.CHD.2","No. hr 15 <= T <= 30 & RH >= 90","pre","TRH","count","hourly","24h",60,"pre",40,"pre",20
+"Shah et al. (2021)","TRH.15T30nRHG90.CHD","TRH.15T30nRHG90.CHD.3","No. hr 15 <= T <= 30 & RH >= 90","post","TRH","count","hourly","24h",0,"anthesis",10,"post",10
+"Shah et al. (2021)","TRH.20T25nRHG85.CHD","TRH.20T25nRHG85.CHD.1","No. hr 20 <= T <= 25 & RH >= 85","post","TRH","count","hourly","24h",0,"anthesis",10,"post",10
+"Shah et al. (2021)","TRH.5T30nRHG75.CHD","TRH.5T30nRHG75.CHD.1","No. hr 5 <= T <= 30 & RH >= 75","pre","TRH","count","hourly","24h",20,"pre",0,"anthesis",20
+"Shah et al. (2021)","TRH.5T30nRHG75.CHD","TRH.5T30nRHG75.CHD.2","No. hr 5 <= T <= 30 & RH >= 75","pre","TRH","count","hourly","24h",40,"pre",0,"anthesis",40
+"Shah et al. (2021)","TRH.5T30nRHG75.CHD","TRH.5T30nRHG75.CHD.3","No. hr 5 <= T <= 30 & RH >= 75","post","TRH","count","hourly","24h",0,"anthesis",10,"post",10
+"Shah et al. (2021)","TRH.9T30nRHG90.CHD","TRH.9T30nRHG90.CHD.1","No. hr 9 <= T <= 30 & RH >= 90","pre","TRH","count","hourly","24h",30,"pre",0,"anthesis",30
+"Shah et al. (2021)","TRH.9T30nRHG90.CHD","TRH.9T30nRHG90.CHD.2","No. hr 9 <= T <= 30 & RH >= 90","pre","TRH","count","hourly","24h",50,"pre",0,"anthesis",50
+"Shah et al. (2021)","VPD.L11.CHD","VPD.L11.CHD.1","No. hr VPD <= 1.1","pre","VPD","count","hourly","24h",15,"pre",5,"pre",10
+"Shah et al. (2021)","VPD.L11.CHD","VPD.L11.CHD.2","No. hr VPD <= 1.1","pre","VPD","count","hourly","24h",40,"pre",0,"anthesis",40
+"Shah et al. (2021)","VPD.L635.CHD","VPD.L635.CHD.1","No. hr VPD <= 0.635","pre","VPD","count","hourly","24h",15,"pre",5,"pre",10
+"Shah et al. (2021)","VPD.L635.CHD","VPD.L635.CHD.2","No. hr VPD <= 0.635","pre-post","VPD","count","hourly","24h",40,"pre",10,"post",50
+"Shah et al. (2021)","RH.G70.CD","RH.G70.CD.1","No. days mean RH > 70","pre","RH","count","daily","24h",40,"pre",10,"pre",30
+"Shah et al. (2021)","RH.G70.CD","RH.G70.CD.2","No. days mean RH > 70","post","RH","count","daily","24h",0,"anthesis",10,"post",10
+"Shah et al. (2021)","RH.G70.CD","RH.G70.CD.3","No. days mean RH > 70","pre-post","RH","count","daily","24h",15,"pre",10,"post",25
+"Shah et al. (2021)","T.14T22.CD","T.14T22.CD.1","No. days 14 < mean T < 22","pre","T","count","daily","24h",70,"pre",0,"anthesis",70
+"Shah et al. (2021)","T.14T22.CD","T.14T22.CD.2","No. days 14 < mean T < 22","pre","T","count","daily","24h",60,"pre",40,"pre",20
+"Shah et al. (2021)","VPD.L6.CD","VPD.L6.CD.1","No. days mean VPD < 0.6","pre","VPD","count","daily","24h",20,"pre",0,"anthesis",20
+"Shah et al. (2021)","VPD.L6.CD","VPD.L6.CD.2","No. days mean VPD < 0.6","pre","VPD","count","daily","24h",40,"pre",0,"anthesis",40
+"Shah et al. (2021)","VPD.L6.CD","VPD.L6.CD.3","No. days mean VPD < 0.6","post","VPD","count","daily","24h",0,"anthesis",20,"post",20
+"Shah et al. (2021)","T.MINMAXDIFF","T.MINMAXDIFF.1","Max - min daily T","pre","T","mean","daily","24h",20,"pre",0,"anthesis",20
+"Shah et al. (2021)","T.MINMAXDIFF","T.MINMAXDIFF.2","Max - min daily T","pre-post","T","mean","daily","24h",20,"pre",10,"post",30
+"Shah et al. (2021)","RH.MINMAXDIFF","RH.MINMAXDIFF.1","Max - min daily RH","pre","RH","mean","daily","24h",20,"pre",10,"pre",10
+"Shah et al. (2021)","RH.MINMAXDIFF","RH.MINMAXDIFF.2","Max - min daily RH","pre","RH","mean","daily","24h",30,"pre",0,"anthesis",30
+"Shah et al. (2021)","RH.MINMAXDIFF","RH.MINMAXDIFF.3","Max - min daily RH","pre-post","RH","mean","daily","24h",30,"pre",10,"post",40
+"Shah et al. (2021)","P.MINMAXDIFF","P.MINMAXDIFF.1","Max - min daily P","pre","P","mean","daily","24h",60,"pre",50,"pre",10
+"Shah et al. (2021)","D.MINMAXDIFF","D.MINMAXDIFF.1","Max - min daily D","pre","D","mean","daily","24h",30,"pre",0,"anthesis",30
+"Shah et al. (2021)","D.MINMAXDIFF","D.MINMAXDIFF.2","Max - min daily D","pre","D","mean","daily","24h",40,"pre",5,"pre",35
+"Shah et al. (2021)","D.MINMAXDIFF","D.MINMAXDIFF.3","Max - min daily D","pre-post","D","mean","daily","24h",20,"pre",10,"post",30
+"Shah et al. (2021)","VPD.MINMAXDIFF","VPD.MINMAXDIFF.1","Max - min daily VPD","pre","VPD","mean","daily","24h",10,"pre",0,"anthesis",10
+"Shah et al. (2021)","VPD.MINMAXDIFF","VPD.MINMAXDIFF.2","Max - min daily VPD","pre","VPD","mean","daily","24h",40,"pre",0,"anthesis",40
+"Shah et al. (2021)","VPD.MINMAXDIFF","VPD.MINMAXDIFF.3","Max - min daily VPD","pre-post","VPD","mean","daily","24h",10,"pre",10,"post",20
+"Shah et al. (2021)","TDD.MINMAXDIFF","TDD.MINMAXDIFF.1","Max - min daily TDD","pre","TDD","mean","daily","24h",30,"pre",0,"anthesis",30
+"Shah et al. (2021)","TDD.MINMAXDIFF","TDD.MINMAXDIFF.2","Max - min daily TDD","pre","TDD","mean","daily","24h",40,"pre",0,"anthesis",40
+"Shah et al. (2021)","TDD.MINMAXDIFF","TDD.MINMAXDIFF.3","Max - min daily TDD","pre-post","TDD","mean","daily","24h",30,"pre",10,"post",40
+"Shah et al. (2021)","T.SD","T.SD.1","Mean(per day sd(hourly T))","pre","T","mean","daily","24h",20,"pre",0,"anthesis",20
+"Shah et al. (2021)","T.SD","T.SD.2","Mean(per day sd(hourly T))","post","T","mean","daily","24h",0,"anthesis",10,"post",10
+"Shah et al. (2021)","T.SD","T.SD.3","Mean(per day sd(hourly T))","pre-post","T","mean","daily","24h",20,"pre",10,"post",30
+"Shah et al. (2021)","D.SD","D.SD.1","Mean(per day sd(hourly D))","pre","D","mean","daily","24h",30,"pre",0,"anthesis",30
+"Shah et al. (2021)","D.SD","D.SD.2","Mean(per day sd(hourly D))","pre","D","mean","daily","24h",40,"pre",10,"pre",30
+"Shah et al. (2021)","D.SD","D.SD.3","Mean(per day sd(hourly D))","pre-post","D","mean","daily","24h",40,"pre",10,"post",50
+"Shah et al. (2021)","P.SD","P.SD.1","Mean(per day sd(hourly P))","pre","P","mean","daily","24h",60,"pre",50,"pre",10
+"Shah et al. (2021)","VPD.SD","VPD.SD.1","Mean(per day sd(hourly VPD))","pre","VPD","mean","daily","24h",10,"pre",0,"anthesis",10
+"Shah et al. (2021)","VPD.SD","VPD.SD.2","Mean(per day sd(hourly VPD))","pre","VPD","mean","daily","24h",40,"pre",0,"anthesis",40
+"Shah et al. (2021)","VPD.SD","VPD.SD.3","Mean(per day sd(hourly VPD))","post","VPD","mean","daily","24h",0,"anthesis",10,"post",10
+"Shah et al. (2021)","VPD.SD","VPD.SD.4","Mean(per day sd(hourly VPD))","pre-post","VPD","mean","daily","24h",10,"pre",10,"post",20
+"Shah et al. (2021)","RH.SD","RH.SD.1","Mean(per day sd(hourly RH))","pre","RH","mean","daily","24h",20,"pre",0,"anthesis",20
+"Shah et al. (2021)","RH.SD","RH.SD.2","Mean(per day sd(hourly RH))","pre","RH","mean","daily","24h",20,"pre",10,"pre",10
+"Shah et al. (2021)","TDD.SD","TDD.SD.1","Mean(per day sd(hourly TDD))","pre","TDD","mean","daily","24h",30,"pre",0,"anthesis",30
+"Shah et al. (2021)","TDD.SD","TDD.SD.2","Mean(per day sd(hourly TDD))","pre","TDD","mean","daily","24h",40,"pre",0,"anthesis",40
+"Shah et al. (2021)","TDD.SD","TDD.SD.3","Mean(per day sd(hourly TDD))","post","TDD","mean","daily","24h",0,"anthesis",10,"post",10
+"Shah et al. (2021)","TDD.SD","TDD.SD.4","Mean(per day sd(hourly TDD))","pre-post","TDD","mean","daily","24h",20,"pre",10,"post",30
+"DeWolf et al. (2003)","T.MIN","MT7","Daily minimum: T","pre","T","mean","daily","24h",7,"pre",0,"anthesis",7
+"DeWolf et al. (2003)","T.G15.CHD","T157","No. hr T >= 15","pre","T","count","hourly","24h",7,"pre",0,"anthesis",7
+"DeWolf et al. (2003)","T.15T30.CHD","T15307","No. hr 15 <= T <= 30","pre","T","count","hourly","24h",7,"pre",0,"anthesis",7
+"DeWolf et al. (2003)","RH.A","RH7","Daily mean RH","pre","RH","mean","daily","24h",7,"pre",0,"anthesis",7
+"DeWolf et al. (2003)","RH.G90.CHD","RH907","No. hr RH >= 90","pre","RH","count","hourly","24h",7,"pre",0,"anthesis",7
+"DeWolf et al. (2003)","TRH.15T30nRHG90.CHD","TRH907","No. hr 15 <= T <= 30 & RH >= 90","pre","TRH","count","hourly","24h",7,"pre",0,"anthesis",7
+"DeWolf et al. (2003)","TRH.15T30nRHG80.CHD","TRH807","No. hr 15 <= T <= 30 & RH >= 80","pre","TRH","count","hourly","24h",7,"pre",0,"anthesis",7
+"DeWolf et al. (2003)","T.MIN","MT10","Daily minimum: T","post","T","mean","daily","24h",0,"anthesis",10,"post",10
+"DeWolf et al. (2003)","T.G15.CHD","T1510","No. hr T >= 15","post","T","count","hourly","24h",0,"anthesis",10,"post",10
+"DeWolf et al. (2003)","T.15T30.CHD","T153010","No. hr 15 <= T <= 30","post","T","count","hourly","24h",0,"anthesis",10,"post",10
+"DeWolf et al. (2003)","RH.A","RH10","Daily mean RH","post","RH","mean","daily","24h",0,"anthesis",10,"post",10
+"DeWolf et al. (2003)","RH.G90.CHD","RH9010","No. hr RH >= 90","post","RH","count","hourly","24h",0,"anthesis",10,"post",10
+"DeWolf et al. (2003)","RH.G80.CHD","RH8010","No. hr RH >= 80","post","RH","count","hourly","24h",0,"anthesis",10,"post",10
+"DeWolf et al. (2003)","TRH.15T30nRHG90.CHD","TRH9010","No. hr 15 <= T <= 30 & RH >= 90","post","TRH","count","hourly","24h",0,"anthesis",10,"post",10
+"DeWolf et al. (2003)","TRH.15T30nRHG80.CHD","TRH8010","No. hr 15 <= T <= 30 & RH >= 80","post","TRH","count","hourly","24h",0,"anthesis",10,"post",10
+"DeWolf et al. (2003)","INT.CHD","INT3","T15307 × TRH9010","pre-post","TRH","count","hourly","24h",7,"pre",10,"post",17
+"Shah et al. (2013)","VPD.AN","VPD.A.PRE5.12H","Mean VPD overnight","pre","VPD","mean","daily","12h",5,"pre",0,"anthesis",5
+"Shah et al. (2013)","VPD.L20.CHN","VPD.L20.PRE5.12H","No. overnight hr VPD <= 0.20","pre","VPD","count","hourly","12h",5,"pre",0,"anthesis",5
+"Shah et al. (2013)","VPD.L45.CHN","VPD.L45.PRE5.12H","No. overnight hr VPD <= 0.45","pre","VPD","count","hourly","12h",5,"pre",0,"anthesis",5
+"Shah et al. (2013)","VPD.AN","VPD.A.PRE7.12H","Mean VPD overnight","pre","VPD","mean","daily","12h",7,"pre",0,"anthesis",7
+"Shah et al. (2013)","VPD.L20.CHN","VPD.L20.PRE7.12H","No. overnight hr VPD <= 0.20","pre","VPD","count","hourly","12h",7,"pre",0,"anthesis",7
+"Shah et al. (2013)","VPD.L45.CHN","VPD.L45.PRE7.12H","No. overnight hr VPD <= 0.45","pre","VPD","count","hourly","12h",7,"pre",0,"anthesis",7
+"Shah et al. (2013)","VPD.AN","VPD.A.PRE10.12H","Mean VPD overnight","pre","VPD","mean","daily","12h",10,"pre",0,"anthesis",10
+"Shah et al. (2013)","VPD.L20.CHN","VPD.L20.PRE10.12H","No. overnight hr VPD <= 0.20","pre","VPD","count","hourly","12h",10,"pre",0,"anthesis",10
+"Shah et al. (2013)","VPD.L45.CHN","VPD.L45.PRE10.12H","No. overnight hr VPD <= 0.45","pre","VPD","count","hourly","12h",10,"pre",0,"anthesis",10
+"Shah et al. (2013)","VPD.AN","VPD.A.PRE14.12H","Mean VPD overnight","pre","VPD","mean","daily","12h",14,"pre",0,"anthesis",14
+"Shah et al. (2013)","VPD.L20.CHN","VPD.L20.PRE14.12H","No. overnight hr VPD <= 0.20","pre","VPD","count","hourly","12h",14,"pre",0,"anthesis",14
+"Shah et al. (2013)","VPD.L45.CHN","VPD.L45.PRE14.12H","No. overnight hr VPD <= 0.45","pre","VPD","count","hourly","12h",14,"pre",0,"anthesis",14
+"Shah et al. (2013)","VPD.AN","VPD.A.PRE15.12H","Mean VPD overnight","pre","VPD","mean","daily","12h",15,"pre",0,"anthesis",15
+"Shah et al. (2013)","VPD.L20.CHN","VPD.L20.PRE15.12H","No. overnight hr VPD <= 0.20","pre","VPD","count","hourly","12h",15,"pre",0,"anthesis",15
+"Shah et al. (2013)","VPD.L45.CHN","VPD.L45.PRE15.12H","No. overnight hr VPD <= 0.45","pre","VPD","count","hourly","12h",15,"pre",0,"anthesis",15
+"Shah et al. (2013)","VPD.AN","VPD.A.POST5.12H","Mean VPD overnight","post","VPD","mean","daily","12h",0,"anthesis",5,"post",5
+"Shah et al. (2013)","VPD.L20.CHN","VPD.L20.POST5.12H","No. overnight hr VPD <= 0.20","post","VPD","count","hourly","12h",0,"anthesis",5,"post",5
+"Shah et al. (2013)","VPD.L45.CHN","VPD.L45.POST5.12H","No. overnight hr VPD <= 0.45","post","VPD","count","hourly","12h",0,"anthesis",5,"post",5
+"Shah et al. (2013)","VPD.AN","VPD.A.POST7.12H","Mean VPD overnight","post","VPD","mean","daily","12h",0,"anthesis",7,"post",7
+"Shah et al. (2013)","VPD.L20.CHN","VPD.L20.POST7.12H","No. overnight hr VPD <= 0.20","post","VPD","count","hourly","12h",0,"anthesis",7,"post",7
+"Shah et al. (2013)","VPD.L45.CHN","VPD.L45.POST7.12H","No. overnight hr VPD <= 0.45","post","VPD","count","hourly","12h",0,"anthesis",7,"post",7
+"Shah et al. (2013)","VPD.AN","VPD.A.POST10.12H","Mean VPD overnight","post","VPD","mean","daily","12h",0,"anthesis",10,"post",10
+"Shah et al. (2013)","VPD.L20.CHN","VPD.L20.POST10.12H","No. overnight hr VPD <= 0.20","post","VPD","count","hourly","12h",0,"anthesis",10,"post",10
+"Shah et al. (2013)","VPD.L45.CHN","VPD.L45.POST10.12H","No. overnight hr VPD <= 0.45","post","VPD","count","hourly","12h",0,"anthesis",10,"post",10
+"Shah et al. (2013)","VPD.AN","VPD.A.POST14.12H","Mean VPD overnight","post","VPD","mean","daily","12h",0,"anthesis",14,"post",14
+"Shah et al. (2013)","VPD.L20.CHN","VPD.L20.POST14.12H","No. overnight hr VPD <= 0.20","post","VPD","count","hourly","12h",0,"anthesis",14,"post",14
+"Shah et al. (2013)","VPD.L45.CHN","VPD.L45.POST14.12H","No. overnight hr VPD <= 0.45","post","VPD","count","hourly","12h",0,"anthesis",14,"post",14
+"Shah et al. (2013)","VPD.AN","VPD.A.POST15.12H","Mean VPD overnight","post","VPD","mean","daily","12h",0,"anthesis",15,"post",15
+"Shah et al. (2013)","VPD.L20.CHN","VPD.L20.POST15.12H","No. overnight hr VPD <= 0.20","post","VPD","count","hourly","12h",0,"anthesis",15,"post",15
+"Shah et al. (2013)","VPD.L45.CHN","VPD.L45.POST15.12H","No. overnight hr VPD <= 0.45","post","VPD","count","hourly","12h",0,"anthesis",15,"post",15
+"Shah et al. (2013)","TDD.AN","DD.A.PRE5.12H","Mean TDD overnight","pre","TDD","mean","daily","12h",5,"pre",0,"anthesis",5
+"Shah et al. (2013)","TDD.L1.CHN","DD.L1.PRE5.12H","No. overnight hr TDD < 1.0","pre","TDD","count","hourly","12h",5,"pre",0,"anthesis",5
+"Shah et al. (2013)","TDD.AN","DD.A.PRE7.12H","Mean TDD overnight","pre","TDD","mean","daily","12h",7,"pre",0,"anthesis",7
+"Shah et al. (2013)","TDD.L1.CHN","DD.L1.PRE7.12H","No. overnight hr TDD < 1.0","pre","TDD","count","hourly","12h",7,"pre",0,"anthesis",7
+"Shah et al. (2013)","TDD.AN","DD.A.PRE10.12H","Mean TDD overnight","pre","TDD","mean","daily","12h",10,"pre",0,"anthesis",10
+"Shah et al. (2013)","TDD.L1.CHN","DD.L1.PRE10.12H","No. overnight hr TDD < 1.0","pre","TDD","count","hourly","12h",10,"pre",0,"anthesis",10
+"Shah et al. (2013)","TDD.AN","DD.A.PRE14.12H","Mean TDD overnight","pre","TDD","mean","daily","12h",14,"pre",0,"anthesis",14
+"Shah et al. (2013)","TDD.L1.CHN","DD.L1.PRE14.12H","No. overnight hr TDD < 1.0","pre","TDD","count","hourly","12h",14,"pre",0,"anthesis",14
+"Shah et al. (2013)","TDD.AN","DD.A.PRE15.12H","Mean TDD overnight","pre","TDD","mean","daily","12h",15,"pre",0,"anthesis",15
+"Shah et al. (2013)","TDD.L1.CHN","DD.L1.PRE15.12H","No. overnight hr TDD < 1.0","pre","TDD","count","hourly","12h",15,"pre",0,"anthesis",15
+"Shah et al. (2013)","TDD.AN","DD.A.POST5.12H","Mean TDD overnight","post","TDD","mean","daily","12h",0,"anthesis",5,"post",5
+"Shah et al. (2013)","TDD.L1.CHN","DD.L1.POST5.12H","No. overnight hr TDD < 1.0","post","TDD","count","hourly","12h",0,"anthesis",5,"post",5
+"Shah et al. (2013)","TDD.AN","DD.A.POST7.12H","Mean TDD overnight","post","TDD","mean","daily","12h",0,"anthesis",7,"post",7
+"Shah et al. (2013)","TDD.L1.CHN","DD.L1.POST7.12H","No. overnight hr TDD < 1.0","post","TDD","count","hourly","12h",0,"anthesis",7,"post",7
+"Shah et al. (2013)","TDD.AN","DD.A.POST10.12H","Mean TDD overnight","post","TDD","mean","daily","12h",0,"anthesis",10,"post",10
+"Shah et al. (2013)","TDD.L1.CHN","DD.L1.POST10.12H","No. overnight hr TDD < 1.0","post","TDD","count","hourly","12h",0,"anthesis",10,"post",10
+"Shah et al. (2013)","TDD.AN","DD.A.POST14.12H","Mean TDD overnight","post","TDD","mean","daily","12h",0,"anthesis",14,"post",14
+"Shah et al. (2013)","TDD.L1.CHN","DD.L1.POST14.12H","No. overnight hr TDD < 1.0","post","TDD","count","hourly","12h",0,"anthesis",14,"post",14
+"Shah et al. (2013)","TDD.AN","DD.A.POST15.12H","Mean TDD overnight","post","TDD","mean","daily","12h",0,"anthesis",15,"post",15
+"Shah et al. (2013)","TDD.L1.CHN","DD.L1.POST15.12H","No. overnight hr TDD < 1.0","post","TDD","count","hourly","12h",0,"anthesis",15,"post",15
+"Shah et al. (2013)","RH.AN","RH.A.PRE5.12H","Mean RH overnight","pre","RH","mean","daily","12h",5,"pre",0,"anthesis",5
+"Shah et al. (2013)","RH.A","RH.A.PRE5.24H","Daily mean RH","pre","RH","mean","daily","24h",5,"pre",0,"anthesis",5
+"Shah et al. (2013)","RH.G80.CHN","RH.G80.PRE5.12H","No. overnight hr RH >= 80","pre","RH","count","hourly","12h",5,"pre",0,"anthesis",5
+"Shah et al. (2013)","RH.G90.CHN","RH.G90.PRE5.12H","No. overnight hr RH >= 90","pre","RH","count","hourly","12h",5,"pre",0,"anthesis",5
+"Shah et al. (2013)","RH.AN","RH.A.PRE7.12H","Mean RH overnight","pre","RH","mean","daily","12h",7,"pre",0,"anthesis",7
+"Shah et al. (2013)","RH.G80.CHN","RH.G80.PRE7.12H","No. overnight hr RH >= 80","pre","RH","count","hourly","12h",7,"pre",0,"anthesis",7
+"Shah et al. (2013)","RH.G90.CHN","RH.G90.PRE7.12H","No. overnight hr RH >= 90","pre","RH","count","hourly","12h",7,"pre",0,"anthesis",7
+"Shah et al. (2013)","RH.AN","RH.A.PRE10.12H","Mean RH overnight","pre","RH","mean","daily","12h",10,"pre",0,"anthesis",10
+"Shah et al. (2013)","RH.A","RH.A.PRE10.24H","Daily mean RH","pre","RH","mean","daily","24h",10,"pre",0,"anthesis",10
+"Shah et al. (2013)","RH.G80.CHN","RH.G80.PRE10.12H","No. overnight hr RH >= 80","pre","RH","count","hourly","12h",10,"pre",0,"anthesis",10
+"Shah et al. (2013)","RH.G90.CHN","RH.G90.PRE10.12H","No. overnight hr RH >= 90","pre","RH","count","hourly","12h",10,"pre",0,"anthesis",10
+"Shah et al. (2013)","RH.AN","RH.A.PRE14.12H","Mean RH overnight","pre","RH","mean","daily","12h",14,"pre",0,"anthesis",14
+"Shah et al. (2013)","RH.A","RH.A.PRE14.24H","Daily mean RH","pre","RH","mean","daily","24h",14,"pre",0,"anthesis",14
+"Shah et al. (2013)","RH.G80.CHN","RH.G80.PRE14.12H","No. overnight hr RH >= 80","pre","RH","count","hourly","12h",14,"pre",0,"anthesis",14
+"Shah et al. (2013)","RH.G90.CHN","RH.G90.PRE14.12H","No. overnight hr RH >= 90","pre","RH","count","hourly","12h",14,"pre",0,"anthesis",14
+"Shah et al. (2013)","RH.AN","RH.A.PRE15.12H","Mean RH overnight","pre","RH","mean","daily","12h",15,"pre",0,"anthesis",15
+"Shah et al. (2013)","RH.A","RH.A.PRE15.24H","Daily mean RH","pre","RH","mean","daily","24h",15,"pre",0,"anthesis",15
+"Shah et al. (2013)","RH.G80.CHN","RH.G80.PRE15.12H","No. overnight hr RH >= 80","pre","RH","count","hourly","12h",15,"pre",0,"anthesis",15
+"Shah et al. (2013)","RH.G90.CHN","RH.G90.PRE15.12H","No. overnight hr RH >= 90","pre","RH","count","hourly","12h",15,"pre",0,"anthesis",15
+"Shah et al. (2013)","RH.AN","RH.A.POST5.12H","Mean RH overnight","post","RH","mean","daily","12h",0,"anthesis",5,"post",5
+"Shah et al. (2013)","RH.A","RH.A.POST5.24H","Daily mean RH","post","RH","mean","daily","24h",0,"anthesis",5,"post",5
+"Shah et al. (2013)","RH.G80.CHN","RH.G80.POST5.12H","No. overnight hr RH >= 80","post","RH","count","hourly","12h",0,"anthesis",5,"post",5
+"Shah et al. (2013)","RH.G90.CHN","RH.G90.POST5.12H","No. overnight hr RH >= 90","post","RH","count","hourly","12h",0,"anthesis",5,"post",5
+"Shah et al. (2013)","RH.AN","RH.A.POST7.12H","Mean RH overnight","post","RH","mean","daily","12h",0,"anthesis",7,"post",7
+"Shah et al. (2013)","RH.A","RH.A.POST7.24H","Daily mean RH","post","RH","mean","daily","24h",0,"anthesis",7,"post",7
+"Shah et al. (2013)","RH.G80.CHN","RH.G80.POST7.12H","No. overnight hr RH >= 80","post","RH","count","hourly","12h",0,"anthesis",7,"post",7
+"Shah et al. (2013)","RH.G90.CHN","RH.G90.POST7.12H","No. overnight hr RH >= 90","post","RH","count","hourly","12h",0,"anthesis",7,"post",7
+"Shah et al. (2013)","RH.AN","RH.A.POST10.12H","Mean RH overnight","post","RH","mean","daily","12h",0,"anthesis",10,"post",10
+"Shah et al. (2013)","RH.G80.CHN","RH.G80.POST10.12H","No. overnight hr RH >= 80","post","RH","count","hourly","12h",0,"anthesis",10,"post",10
+"Shah et al. (2013)","RH.G90.CHN","RH.G90.POST10.12H","No. overnight hr RH >= 90","post","RH","count","hourly","12h",0,"anthesis",10,"post",10
+"Shah et al. (2013)","RH.AN","RH.A.POST14.12H","Mean RH overnight","post","RH","mean","daily","12h",0,"anthesis",14,"post",14
+"Shah et al. (2013)","RH.A","RH.A.POST14.24H","Daily mean RH","post","RH","mean","daily","24h",0,"anthesis",14,"post",14
+"Shah et al. (2013)","RH.G80.CHN","RH.G80.POST14.12H","No. overnight hr RH >= 80","post","RH","count","hourly","12h",0,"anthesis",14,"post",14
+"Shah et al. (2013)","RH.G90.CHN","RH.G90.POST14.12H","No. overnight hr RH >= 90","post","RH","count","hourly","12h",0,"anthesis",14,"post",14
+"Shah et al. (2013)","RH.AN","RH.A.POST15.12H","Mean RH overnight","post","RH","mean","daily","12h",0,"anthesis",15,"post",15
+"Shah et al. (2013)","RH.A","RH.A.POST15.24H","Daily mean RH","post","RH","mean","daily","24h",0,"anthesis",15,"post",15
+"Shah et al. (2013)","RH.G80.CHN","RH.G80.POST15.12H","No. overnight hr RH >= 80","post","RH","count","hourly","12h",0,"anthesis",15,"post",15
+"Shah et al. (2013)","RH.G90.CHN","RH.G90.POST15.12H","No. overnight hr RH >= 90","post","RH","count","hourly","12h",0,"anthesis",15,"post",15
+"Shah et al. (2013)","T.A","T.A.PRE5.24H","Daily mean T","pre","T","mean","daily","24h",5,"pre",0,"anthesis",5
+"Shah et al. (2013)","T.9T30.CHD","T.9T30.PRE5.24H","No. hr 9 <= T <= 30","pre","T","count","hourly","24h",5,"pre",0,"anthesis",5
+"Shah et al. (2013)","T.15T30.CHD","T.15T30.PRE5.24H","No. hr 15 <= T <= 30","pre","T","count","hourly","24h",5,"pre",0,"anthesis",5
+"Shah et al. (2013)","T.L9.CHD","T.L9.PRE5.24H","No. hr T < 9","pre","T","count","hourly","24h",5,"pre",0,"anthesis",5
+"Shah et al. (2013)","T.L15.CHD","T.L15.PRE5.24H","No. hr T < 15","pre","T","count","hourly","24h",5,"pre",0,"anthesis",5
+"Shah et al. (2013)","T.G30.CHD","T.G30.PRE5.24H","No. hr T > 30","pre","T","count","hourly","24h",5,"pre",0,"anthesis",5
+"Shah et al. (2013)","T.A","T.A.PRE7.24H","Daily mean T","pre","T","mean","daily","24h",7,"pre",0,"anthesis",7
+"Shah et al. (2013)","T.9T30.CHD","T.9T30.PRE7.24H","No. hr 9 <= T <= 30","pre","T","count","hourly","24h",7,"pre",0,"anthesis",7
+"Shah et al. (2013)","T.L9.CHD","T.L9.PRE7.24H","No. hr T < 9","pre","T","count","hourly","24h",7,"pre",0,"anthesis",7
+"Shah et al. (2013)","T.L15.CHD","T.L15.PRE7.24H","No. hr T < 15","pre","T","count","hourly","24h",7,"pre",0,"anthesis",7
+"Shah et al. (2013)","T.G30.CHD","T.G30.PRE7.24H","No. hr T > 30","pre","T","count","hourly","24h",7,"pre",0,"anthesis",7
+"Shah et al. (2013)","T.A","T.A.PRE10.24H","Daily mean T","pre","T","mean","daily","24h",10,"pre",0,"anthesis",10
+"Shah et al. (2013)","T.9T30.CHD","T.9T30.PRE10.24H","No. hr 9 <= T <= 30","pre","T","count","hourly","24h",10,"pre",0,"anthesis",10
+"Shah et al. (2013)","T.15T30.CHD","T.15T30.PRE10.24H","No. hr 15 <= T <= 30","pre","T","count","hourly","24h",10,"pre",0,"anthesis",10
+"Shah et al. (2013)","T.L9.CHD","T.L9.PRE10.24H","No. hr T < 9","pre","T","count","hourly","24h",10,"pre",0,"anthesis",10
+"Shah et al. (2013)","T.L15.CHD","T.L15.PRE10.24H","No. hr T < 15","pre","T","count","hourly","24h",10,"pre",0,"anthesis",10
+"Shah et al. (2013)","T.G30.CHD","T.G30.PRE10.24H","No. hr T > 30","pre","T","count","hourly","24h",10,"pre",0,"anthesis",10
+"Shah et al. (2013)","T.A","T.A.PRE14.24H","Daily mean T","pre","T","mean","daily","24h",14,"pre",0,"anthesis",14
+"Shah et al. (2013)","T.9T30.CHD","T.9T30.PRE14.24H","No. hr 9 <= T <= 30","pre","T","count","hourly","24h",14,"pre",0,"anthesis",14
+"Shah et al. (2013)","T.15T30.CHD","T.15T30.PRE14.24H","No. hr 15 <= T <= 30","pre","T","count","hourly","24h",14,"pre",0,"anthesis",14
+"Shah et al. (2013)","T.L9.CHD","T.L9.PRE14.24H","No. hr T < 9","pre","T","count","hourly","24h",14,"pre",0,"anthesis",14
+"Shah et al. (2013)","T.L15.CHD","T.L15.PRE14.24H","No. hr T < 15","pre","T","count","hourly","24h",14,"pre",0,"anthesis",14
+"Shah et al. (2013)","T.G30.CHD","T.G30.PRE14.24H","No. hr T > 30","pre","T","count","hourly","24h",14,"pre",0,"anthesis",14
+"Shah et al. (2013)","T.A","T.A.PRE15.24H","Daily mean T","pre","T","mean","daily","24h",15,"pre",0,"anthesis",15
+"Shah et al. (2013)","T.9T30.CHD","T.9T30.PRE15.24H","No. hr 9 <= T <= 30","pre","T","count","hourly","24h",15,"pre",0,"anthesis",15
+"Shah et al. (2013)","T.15T30.CHD","T.15T30.PRE15.24H","No. hr 15 <= T <= 30","pre","T","count","hourly","24h",15,"pre",0,"anthesis",15
+"Shah et al. (2013)","T.L9.CHD","T.L9.PRE15.24H","No. hr T < 9","pre","T","count","hourly","24h",15,"pre",0,"anthesis",15
+"Shah et al. (2013)","T.L15.CHD","T.L15.PRE15.24H","No. hr T < 15","pre","T","count","hourly","24h",15,"pre",0,"anthesis",15
+"Shah et al. (2013)","T.G30.CHD","T.G30.PRE15.24H","No. hr T > 30","pre","T","count","hourly","24h",15,"pre",0,"anthesis",15
+"Shah et al. (2013)","T.A","T.A.POST5.24H","Daily mean T","post","T","mean","daily","24h",0,"anthesis",5,"post",5
+"Shah et al. (2013)","T.9T30.CHD","T.9T30.POST5.24H","No. hr 9 <= T <= 30","post","T","count","hourly","24h",0,"anthesis",5,"post",5
+"Shah et al. (2013)","T.15T30.CHD","T.15T30.POST5.24H","No. hr 15 <= T <= 30","post","T","count","hourly","24h",0,"anthesis",5,"post",5
+"Shah et al. (2013)","T.L9.CHD","T.L9.POST5.24H","No. hr T < 9","post","T","count","hourly","24h",0,"anthesis",5,"post",5
+"Shah et al. (2013)","T.L15.CHD","T.L15.POST5.24H","No. hr T < 15","post","T","count","hourly","24h",0,"anthesis",5,"post",5
+"Shah et al. (2013)","T.G30.CHD","T.G30.POST5.24H","No. hr T > 30","post","T","count","hourly","24h",0,"anthesis",5,"post",5
+"Shah et al. (2013)","T.A","T.A.POST7.24H","Daily mean T","post","T","mean","daily","24h",0,"anthesis",7,"post",7
+"Shah et al. (2013)","T.9T30.CHD","T.9T30.POST7.24H","No. hr 9 <= T <= 30","post","T","count","hourly","24h",0,"anthesis",7,"post",7
+"Shah et al. (2013)","T.15T30.CHD","T.15T30.POST7.24H","No. hr 15 <= T <= 30","post","T","count","hourly","24h",0,"anthesis",7,"post",7
+"Shah et al. (2013)","T.L9.CHD","T.L9.POST7.24H","No. hr T < 9","post","T","count","hourly","24h",0,"anthesis",7,"post",7
+"Shah et al. (2013)","T.L15.CHD","T.L15.POST7.24H","No. hr T < 15","post","T","count","hourly","24h",0,"anthesis",7,"post",7
+"Shah et al. (2013)","T.G30.CHD","T.G30.POST7.24H","No. hr T > 30","post","T","count","hourly","24h",0,"anthesis",7,"post",7
+"Shah et al. (2013)","T.9T30.CHD","T.9T30.POST10.24H","No. hr 9 <= T <= 30","post","T","count","hourly","24h",0,"anthesis",10,"post",10
+"Shah et al. (2013)","T.L9.CHD","T.L9.POST10.24H","No. hr T < 9","post","T","count","hourly","24h",0,"anthesis",10,"post",10
+"Shah et al. (2013)","T.L15.CHD","T.L15.POST10.24H","No. hr T < 15","post","T","count","hourly","24h",0,"anthesis",10,"post",10
+"Shah et al. (2013)","T.G30.CHD","T.G30.POST10.24H","No. hr T > 30","post","T","count","hourly","24h",0,"anthesis",10,"post",10
+"Shah et al. (2013)","T.A","T.A.POST14.24H","Daily mean T","post","T","mean","daily","24h",0,"anthesis",14,"post",14
+"Shah et al. (2013)","T.9T30.CHD","T.9T30.POST14.24H","No. hr 9 <= T <= 30","post","T","count","hourly","24h",0,"anthesis",14,"post",14
+"Shah et al. (2013)","T.15T30.CHD","T.15T30.POST14.24H","No. hr 15 <= T <= 30","post","T","count","hourly","24h",0,"anthesis",14,"post",14
+"Shah et al. (2013)","T.L9.CHD","T.L9.POST14.24H","No. hr T < 9","post","T","count","hourly","24h",0,"anthesis",14,"post",14
+"Shah et al. (2013)","T.L15.CHD","T.L15.POST14.24H","No. hr T < 15","post","T","count","hourly","24h",0,"anthesis",14,"post",14
+"Shah et al. (2013)","T.G30.CHD","T.G30.POST14.24H","No. hr T > 30","post","T","count","hourly","24h",0,"anthesis",14,"post",14
+"Shah et al. (2013)","T.A","T.A.POST15.24H","Daily mean T","post","T","mean","daily","24h",0,"anthesis",15,"post",15
+"Shah et al. (2013)","T.9T30.CHD","T.9T30.POST15.24H","No. hr 9 <= T <= 30","post","T","count","hourly","24h",0,"anthesis",15,"post",15
+"Shah et al. (2013)","T.15T30.CHD","T.15T30.POST15.24H","No. hr 15 <= T <= 30","post","T","count","hourly","24h",0,"anthesis",15,"post",15
+"Shah et al. (2013)","T.L9.CHD","T.L9.POST15.24H","No. hr T < 9","post","T","count","hourly","24h",0,"anthesis",15,"post",15
+"Shah et al. (2013)","T.L15.CHD","T.L15.POST15.24H","No. hr T < 15","post","T","count","hourly","24h",0,"anthesis",15,"post",15
+"Shah et al. (2013)","T.G30.CHD","T.G30.POST15.24H","No. hr T > 30","post","T","count","hourly","24h",0,"anthesis",15,"post",15
+"Shah et al. (2013)","TRH.9T30nRHG80.CHN","TRH.9T30nRHG80.PRE5.12H","No. overnight hr 9 <= T <= 30 & RH >= 80","pre","TRH","count","hourly","12h",5,"pre",0,"anthesis",5
+"Shah et al. (2013)","TRH.9T30nRHG90.CHN","TRH.9T30nRHG90.PRE5.12H","No. overnight hr 9 <= T <= 30 & RH >= 90","pre","TRH","count","hourly","12h",5,"pre",0,"anthesis",5
+"Shah et al. (2013)","TRH.15T30nRHG80.CHN","TRH.15T30nRHG80.PRE5.12H","No. overnight hr 15 <= T <= 30 & RH >= 80","pre","TRH","count","hourly","12h",5,"pre",0,"anthesis",5
+"Shah et al. (2013)","TRH.15T30nRHG90.CHN","TRH.15T30nRHG90.PRE5.12H","No. overnight hr 15 <= T <= 30 & RH >= 90","pre","TRH","count","hourly","12h",5,"pre",0,"anthesis",5
+"Shah et al. (2013)","TRH.9T30nRHG80.CHN","TRH.9T30nRHG80.PRE7.12H","No. overnight hr 9 <= T <= 30 & RH >= 80","pre","TRH","count","hourly","12h",7,"pre",0,"anthesis",7
+"Shah et al. (2013)","TRH.9T30nRHG90.CHN","TRH.9T30nRHG90.PRE7.12H","No. overnight hr 9 <= T <= 30 & RH >= 90","pre","TRH","count","hourly","12h",7,"pre",0,"anthesis",7
+"Shah et al. (2013)","TRH.15T30nRHG80.CHN","TRH.15T30nRHG80.PRE7.12H","No. overnight hr 15 <= T <= 30 & RH >= 80","pre","TRH","count","hourly","12h",7,"pre",0,"anthesis",7
+"Shah et al. (2013)","TRH.15T30nRHG90.CHN","TRH.15T30nRHG90.PRE7.12H","No. overnight hr 15 <= T <= 30 & RH >= 90","pre","TRH","count","hourly","12h",7,"pre",0,"anthesis",7
+"Shah et al. (2013)","TRH.9T30nRHG80.CHN","TRH.9T30nRHG80.PRE10.12H","No. overnight hr 9 <= T <= 30 & RH >= 80","pre","TRH","count","hourly","12h",10,"pre",0,"anthesis",10
+"Shah et al. (2013)","TRH.9T30nRHG90.CHN","TRH.9T30nRHG90.PRE10.12H","No. overnight hr 9 <= T <= 30 & RH >= 90","pre","TRH","count","hourly","12h",10,"pre",0,"anthesis",10
+"Shah et al. (2013)","TRH.15T30nRHG80.CHN","TRH.15T30nRHG80.PRE10.12H","No. overnight hr 15 <= T <= 30 & RH >= 80","pre","TRH","count","hourly","12h",10,"pre",0,"anthesis",10
+"Shah et al. (2013)","TRH.15T30nRHG90.CHN","TRH.15T30nRHG90.PRE10.12H","No. overnight hr 15 <= T <= 30 & RH >= 90","pre","TRH","count","hourly","12h",10,"pre",0,"anthesis",10
+"Shah et al. (2013)","TRH.9T30nRHG80.CHN","TRH.9T30nRHG80.PRE14.12H","No. overnight hr 9 <= T <= 30 & RH >= 80","pre","TRH","count","hourly","12h",14,"pre",0,"anthesis",14
+"Shah et al. (2013)","TRH.9T30nRHG90.CHN","TRH.9T30nRHG90.PRE14.12H","No. overnight hr 9 <= T <= 30 & RH >= 90","pre","TRH","count","hourly","12h",14,"pre",0,"anthesis",14
+"Shah et al. (2013)","TRH.15T30nRHG80.CHN","TRH.15T30nRHG80.PRE14.12H","No. overnight hr 15 <= T <= 30 & RH >= 80","pre","TRH","count","hourly","12h",14,"pre",0,"anthesis",14
+"Shah et al. (2013)","TRH.15T30nRHG90.CHN","TRH.15T30nRHG90.PRE14.12H","No. overnight hr 15 <= T <= 30 & RH >= 90","pre","TRH","count","hourly","12h",14,"pre",0,"anthesis",14
+"Shah et al. (2013)","TRH.9T30nRHG80.CHN","TRH.9T30nRHG80.PRE15.12H","No. overnight hr 9 <= T <= 30 & RH >= 80","pre","TRH","count","hourly","12h",15,"pre",0,"anthesis",15
+"Shah et al. (2013)","TRH.9T30nRHG90.CHN","TRH.9T30nRHG90.PRE15.12H","No. overnight hr 9 <= T <= 30 & RH >= 90","pre","TRH","count","hourly","12h",15,"pre",0,"anthesis",15
+"Shah et al. (2013)","TRH.15T30nRHG80.CHN","TRH.15T30nRHG80.PRE15.12H","No. overnight hr 15 <= T <= 30 & RH >= 80","pre","TRH","count","hourly","12h",15,"pre",0,"anthesis",15
+"Shah et al. (2013)","TRH.15T30nRHG90.CHN","TRH.15T30nRHG90.PRE15.12H","No. overnight hr 15 <= T <= 30 & RH >= 90","pre","TRH","count","hourly","12h",15,"pre",0,"anthesis",15
+"Shah et al. (2013)","TRH.9T30nRHG80.CHN","TRH.9T30nRHG80.POST5.12H","No. overnight hr 9 <= T <= 30 & RH >= 80","post","TRH","count","hourly","12h",0,"anthesis",5,"post",5
+"Shah et al. (2013)","TRH.9T30nRHG90.CHN","TRH.9T30nRHG90.POST5.12H","No. overnight hr 9 <= T <= 30 & RH >= 90","post","TRH","count","hourly","12h",0,"anthesis",5,"post",5
+"Shah et al. (2013)","TRH.15T30nRHG80.CHN","TRH.15T30nRHG80.POST5.12H","No. overnight hr 15 <= T <= 30 & RH >= 80","post","TRH","count","hourly","12h",0,"anthesis",5,"post",5
+"Shah et al. (2013)","TRH.15T30nRHG90.CHN","TRH.15T30nRHG90.POST5.12H","No. overnight hr 15 <= T <= 30 & RH >= 90","post","TRH","count","hourly","12h",0,"anthesis",5,"post",5
+"Shah et al. (2013)","TRH.9T30nRHG80.CHN","TRH.9T30nRHG80.POST7.12H","No. overnight hr 9 <= T <= 30 & RH >= 80","post","TRH","count","hourly","12h",0,"anthesis",7,"post",7
+"Shah et al. (2013)","TRH.9T30nRHG90.CHN","TRH.9T30nRHG90.POST7.12H","No. overnight hr 9 <= T <= 30 & RH >= 90","post","TRH","count","hourly","12h",0,"anthesis",7,"post",7
+"Shah et al. (2013)","TRH.15T30nRHG80.CHN","TRH.15T30nRHG80.POST7.12H","No. overnight hr 15 <= T <= 30 & RH >= 80","post","TRH","count","hourly","12h",0,"anthesis",7,"post",7
+"Shah et al. (2013)","TRH.15T30nRHG90.CHN","TRH.15T30nRHG90.POST7.12H","No. overnight hr 15 <= T <= 30 & RH >= 90","post","TRH","count","hourly","12h",0,"anthesis",7,"post",7
+"Shah et al. (2013)","TRH.9T30nRHG80.CHN","TRH.9T30nRHG80.POST10.12H","No. overnight hr 9 <= T <= 30 & RH >= 80","post","TRH","count","hourly","12h",0,"anthesis",10,"post",10
+"Shah et al. (2013)","TRH.9T30nRHG90.CHN","TRH.9T30nRHG90.POST10.12H","No. overnight hr 9 <= T <= 30 & RH >= 90","post","TRH","count","hourly","12h",0,"anthesis",10,"post",10
+"Shah et al. (2013)","TRH.15T30nRHG80.CHN","TRH.15T30nRHG80.POST10.12H","No. overnight hr 15 <= T <= 30 & RH >= 80","post","TRH","count","hourly","12h",0,"anthesis",10,"post",10
+"Shah et al. (2013)","TRH.15T30nRHG90.CHN","TRH.15T30nRHG90.POST10.12H","No. overnight hr 15 <= T <= 30 & RH >= 90","post","TRH","count","hourly","12h",0,"anthesis",10,"post",10
+"Shah et al. (2013)","TRH.9T30nRHG80.CHN","TRH.9T30nRHG80.POST14.12H","No. overnight hr 9 <= T <= 30 & RH >= 80","post","TRH","count","hourly","12h",0,"anthesis",14,"post",14
+"Shah et al. (2013)","TRH.9T30nRHG90.CHN","TRH.9T30nRHG90.POST14.12H","No. overnight hr 9 <= T <= 30 & RH >= 90","post","TRH","count","hourly","12h",0,"anthesis",14,"post",14
+"Shah et al. (2013)","TRH.15T30nRHG80.CHN","TRH.15T30nRHG80.POST14.12H","No. overnight hr 15 <= T <= 30 & RH >= 80","post","TRH","count","hourly","12h",0,"anthesis",14,"post",14
+"Shah et al. (2013)","TRH.15T30nRHG90.CHN","TRH.15T30nRHG90.POST14.12H","No. overnight hr 15 <= T <= 30 & RH >= 90","post","TRH","count","hourly","12h",0,"anthesis",14,"post",14
+"Shah et al. (2013)","TRH.9T30nRHG80.CHN","TRH.9T30nRHG80.POST15.12H","No. overnight hr 9 <= T <= 30 & RH >= 80","post","TRH","count","hourly","12h",0,"anthesis",15,"post",15
+"Shah et al. (2013)","TRH.9T30nRHG90.CHN","TRH.9T30nRHG90.POST15.12H","No. overnight hr 9 <= T <= 30 & RH >= 90","post","TRH","count","hourly","12h",0,"anthesis",15,"post",15
+"Shah et al. (2013)","TRH.15T30nRHG80.CHN","TRH.15T30nRHG80.POST15.12H","No. overnight hr 15 <= T <= 30 & RH >= 80","post","TRH","count","hourly","12h",0,"anthesis",15,"post",15
+"Shah et al. (2013)","TRH.15T30nRHG90.CHN","TRH.15T30nRHG90.POST15.12H","No. overnight hr 15 <= T <= 30 & RH >= 90","post","TRH","count","hourly","12h",0,"anthesis",15,"post",15
+"Shah et al. (2013)","TRH.9T30nRHG80.CHD","TRH.9T30nRHG80.PRE5.24H","No. hr 9 <= T <= 30 & RH >= 80","pre","TRH","count","hourly","24h",5,"pre",0,"anthesis",5
+"Shah et al. (2013)","TRH.9T30nRHG90.CHD","TRH.9T30nRHG90.PRE5.24H","No. hr 9 <= T <= 30 & RH >= 90","pre","TRH","count","hourly","24h",5,"pre",0,"anthesis",5
+"Shah et al. (2013)","TRH.15T30nRHG80.CHD","TRH.15T30nRHG80.PRE5.24H","No. hr 15 <= T <= 30 & RH >= 80","pre","TRH","count","hourly","24h",5,"pre",0,"anthesis",5
+"Shah et al. (2013)","TRH.15T30nRHG90.CHD","TRH.15T30nRHG90.PRE5.24H","No. hr 15 <= T <= 30 & RH >= 90","pre","TRH","count","hourly","24h",5,"pre",0,"anthesis",5
+"Shah et al. (2013)","TRH.9T30nRHG80.CHD","TRH.9T30nRHG80.PRE7.24H","No. hr 9 <= T <= 30 & RH >= 80","pre","TRH","count","hourly","24h",7,"pre",0,"anthesis",7
+"Shah et al. (2013)","TRH.9T30nRHG90.CHD","TRH.9T30nRHG90.PRE7.24H","No. hr 9 <= T <= 30 & RH >= 90","pre","TRH","count","hourly","24h",7,"pre",0,"anthesis",7
+"Shah et al. (2013)","TRH.9T30nRHG80.CHD","TRH.9T30nRHG80.PRE10.24H","No. hr 9 <= T <= 30 & RH >= 80","pre","TRH","count","hourly","24h",10,"pre",0,"anthesis",10
+"Shah et al. (2013)","TRH.9T30nRHG90.CHD","TRH.9T30nRHG90.PRE10.24H","No. hr 9 <= T <= 30 & RH >= 90","pre","TRH","count","hourly","24h",10,"pre",0,"anthesis",10
+"Shah et al. (2013)","TRH.15T30nRHG80.CHD","TRH.15T30nRHG80.PRE10.24H","No. hr 15 <= T <= 30 & RH >= 80","pre","TRH","count","hourly","24h",10,"pre",0,"anthesis",10
+"Shah et al. (2013)","TRH.15T30nRHG90.CHD","TRH.15T30nRHG90.PRE10.24H","No. hr 15 <= T <= 30 & RH >= 90","pre","TRH","count","hourly","24h",10,"pre",0,"anthesis",10
+"Shah et al. (2013)","TRH.9T30nRHG80.CHD","TRH.9T30nRHG80.PRE14.24H","No. hr 9 <= T <= 30 & RH >= 80","pre","TRH","count","hourly","24h",14,"pre",0,"anthesis",14
+"Shah et al. (2013)","TRH.9T30nRHG90.CHD","TRH.9T30nRHG90.PRE14.24H","No. hr 9 <= T <= 30 & RH >= 90","pre","TRH","count","hourly","24h",14,"pre",0,"anthesis",14
+"Shah et al. (2013)","TRH.15T30nRHG80.CHD","TRH.15T30nRHG80.PRE14.24H","No. hr 15 <= T <= 30 & RH >= 80","pre","TRH","count","hourly","24h",14,"pre",0,"anthesis",14
+"Shah et al. (2013)","TRH.15T30nRHG90.CHD","TRH.15T30nRHG90.PRE14.24H","No. hr 15 <= T <= 30 & RH >= 90","pre","TRH","count","hourly","24h",14,"pre",0,"anthesis",14
+"Shah et al. (2013)","TRH.9T30nRHG80.CHD","TRH.9T30nRHG80.PRE15.24H","No. hr 9 <= T <= 30 & RH >= 80","pre","TRH","count","hourly","24h",15,"pre",0,"anthesis",15
+"Shah et al. (2013)","TRH.9T30nRHG90.CHD","TRH.9T30nRHG90.PRE15.24H","No. hr 9 <= T <= 30 & RH >= 90","pre","TRH","count","hourly","24h",15,"pre",0,"anthesis",15
+"Shah et al. (2013)","TRH.15T30nRHG80.CHD","TRH.15T30nRHG80.PRE15.24H","No. hr 15 <= T <= 30 & RH >= 80","pre","TRH","count","hourly","24h",15,"pre",0,"anthesis",15
+"Shah et al. (2013)","TRH.15T30nRHG90.CHD","TRH.15T30nRHG90.PRE15.24H","No. hr 15 <= T <= 30 & RH >= 90","pre","TRH","count","hourly","24h",15,"pre",0,"anthesis",15
+"Shah et al. (2013)","TRH.9T30nRHG80.CHD","TRH.9T30nRHG80.POST5.24H","No. hr 9 <= T <= 30 & RH >= 80","post","TRH","count","hourly","24h",0,"anthesis",5,"post",5
+"Shah et al. (2013)","TRH.9T30nRHG90.CHD","TRH.9T30nRHG90.POST5.24H","No. hr 9 <= T <= 30 & RH >= 90","post","TRH","count","hourly","24h",0,"anthesis",5,"post",5
+"Shah et al. (2013)","TRH.15T30nRHG80.CHD","TRH.15T30nRHG80.POST5.24H","No. hr 15 <= T <= 30 & RH >= 80","post","TRH","count","hourly","24h",0,"anthesis",5,"post",5
+"Shah et al. (2013)","TRH.15T30nRHG90.CHD","TRH.15T30nRHG90.POST5.24H","No. hr 15 <= T <= 30 & RH >= 90","post","TRH","count","hourly","24h",0,"anthesis",5,"post",5
+"Shah et al. (2013)","TRH.9T30nRHG80.CHD","TRH.9T30nRHG80.POST7.24H","No. hr 9 <= T <= 30 & RH >= 80","post","TRH","count","hourly","24h",0,"anthesis",7,"post",7
+"Shah et al. (2013)","TRH.9T30nRHG90.CHD","TRH.9T30nRHG90.POST7.24H","No. hr 9 <= T <= 30 & RH >= 90","post","TRH","count","hourly","24h",0,"anthesis",7,"post",7
+"Shah et al. (2013)","TRH.15T30nRHG80.CHD","TRH.15T30nRHG80.POST7.24H","No. hr 15 <= T <= 30 & RH >= 80","post","TRH","count","hourly","24h",0,"anthesis",7,"post",7
+"Shah et al. (2013)","TRH.15T30nRHG90.CHD","TRH.15T30nRHG90.POST7.24H","No. hr 15 <= T <= 30 & RH >= 90","post","TRH","count","hourly","24h",0,"anthesis",7,"post",7
+"Shah et al. (2013)","TRH.9T30nRHG80.CHD","TRH.9T30nRHG80.POST10.24H","No. hr 9 <= T <= 30 & RH >= 80","post","TRH","count","hourly","24h",0,"anthesis",10,"post",10
+"Shah et al. (2013)","TRH.9T30nRHG90.CHD","TRH.9T30nRHG90.POST10.24H","No. hr 9 <= T <= 30 & RH >= 90","post","TRH","count","hourly","24h",0,"anthesis",10,"post",10
+"Shah et al. (2013)","TRH.9T30nRHG80.CHD","TRH.9T30nRHG80.POST14.24H","No. hr 9 <= T <= 30 & RH >= 80","post","TRH","count","hourly","24h",0,"anthesis",14,"post",14
+"Shah et al. (2013)","TRH.9T30nRHG90.CHD","TRH.9T30nRHG90.POST14.24H","No. hr 9 <= T <= 30 & RH >= 90","post","TRH","count","hourly","24h",0,"anthesis",14,"post",14
+"Shah et al. (2013)","TRH.15T30nRHG80.CHD","TRH.15T30nRHG80.POST14.24H","No. hr 15 <= T <= 30 & RH >= 80","post","TRH","count","hourly","24h",0,"anthesis",14,"post",14
+"Shah et al. (2013)","TRH.15T30nRHG90.CHD","TRH.15T30nRHG90.POST14.24H","No. hr 15 <= T <= 30 & RH >= 90","post","TRH","count","hourly","24h",0,"anthesis",14,"post",14
+"Shah et al. (2013)","TRH.9T30nRHG80.CHD","TRH.9T30nRHG80.POST15.24H","No. hr 9 <= T <= 30 & RH >= 80","post","TRH","count","hourly","24h",0,"anthesis",15,"post",15
+"Shah et al. (2013)","TRH.9T30nRHG90.CHD","TRH.9T30nRHG90.POST15.24H","No. hr 9 <= T <= 30 & RH >= 90","post","TRH","count","hourly","24h",0,"anthesis",15,"post",15
+"Shah et al. (2013)","TRH.15T30nRHG80.CHD","TRH.15T30nRHG80.POST15.24H","No. hr 15 <= T <= 30 & RH >= 80","post","TRH","count","hourly","24h",0,"anthesis",15,"post",15
+"Shah et al. (2013)","TRH.15T30nRHG90.CHD","TRH.15T30nRHG90.POST15.24H","No. hr 15 <= T <= 30 & RH >= 90","post","TRH","count","hourly","24h",0,"anthesis",15,"post",15
