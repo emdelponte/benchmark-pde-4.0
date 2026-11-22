@@ -1,0 +1,13 @@
+predictor,var,auc_plot_level,auc_direction
+mean RH 20d pre (RH.A.1),RH.A.1,0.6536046609103865,higher=more risk
+mean RH 7d pre (RH7),RH7,0.6500544890602733,higher=more risk
+warm-wet hours 9-30&RH80 7d (TRH.9T30nRHG80.PRE7.24H),TRH.9T30nRHG80.PRE7.24H,0.6270119037639366,higher=more risk
+hours RH>=90 7d pre (RH907),RH907,0.6061195406153073,higher=more risk
+warm-wet hours 15-30&RH80 7d (TRH807),TRH807,0.6054300444295413,higher=more risk
+hours RH>=90 20d pre (RH.G90.CHD.1),RH.G90.CHD.1,0.6032483862855228,higher=more risk
+corn residue,corn,0.5995325282430853,higher=more risk
+mean T 7d pre (T.A.PRE7.24H),T.A.PRE7.24H,0.49714561153491493,higher=less risk
+hours T>30 7d pre (T.G30.PRE7.24H),T.G30.PRE7.24H,0.4434047279738453,higher=less risk
+mean VPD 10d pre (VPD.A.1),VPD.A.1,0.38730404895632486,higher=less risk
+resistance (ordinal VS<S<MS<MR),resist,0.3746604912398357,higher=less risk
+mean TDD 20d pre (TDD.A.1),TDD.A.1,0.3464037220219633,higher=less risk

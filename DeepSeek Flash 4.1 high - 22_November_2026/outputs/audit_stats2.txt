@@ -1,0 +1,147 @@
+====================================================================================================
+A. TIME STAMPS
+====================================================================================================
+fdate time-of-day values: <ArrowStringArray>
+['00:00:00']
+Length: 1, dtype: str
+fdate month distribution:
+fdate
+4     12
+5    511
+6    335
+7    141
+
+====================================================================================================
+B. ENVIRONMENT-LEVEL STRUCTURE
+====================================================================================================
+environments: 492
+environments with >=1 case (S>=5%): 221
+environments with 0 cases: 271
+environments all-case: 144
+distribution of cases per environment:
+n_y5
+0    271
+1    119
+2     66
+3     14
+4     16
+5      1
+6      3
+7      1
+8      1
+
+plots per environment: {'count': 492.0, 'mean': 2.0304878048780486, 'std': 1.4001328733328962, 'min': 1.0, '25%': 1.0, '50%': 2.0, '75%': 3.0, 'max': 10.0}
+
+state-year cells (regardless of anthesis date):
+n state-year cells: 142  cells with 1 plot: 23
+state-year cells with >=1 case: 79 of 142
+
+years represented per state:
+       nunique   min   max
+state                     
+AR           1  2011  2011
+DE           2  2014  2015
+IL           7  2009  2015
+IN          13  2000  2015
+KS           9  1990  2014
+KY           5  2004  2011
+MD           5  2009  2014
+MI           5  2004  2015
+MN           4  2004  2015
+MO          11  1994  2013
+ND          19  1993  2015
+NE           5  2005  2015
+NY           6  2009  2015
+OH          26  1982  2014
+PA           6  2001  2006
+SD          14  1999  2015
+WI           4  2009  2013
+
+number of states per year:
+year
+1982     1
+1984     1
+1986     1
+1987     1
+1988     1
+1989     1
+1990     2
+1991     1
+1992     2
+1993     2
+1994     3
+1995     3
+1996     2
+1997     3
+1998     3
+1999     4
+2000     4
+2001     4
+2002     5
+2003     5
+2004     8
+2005     7
+2006     5
+2007     1
+2008     2
+2009    11
+2010     9
+2011    12
+2012     8
+2013    10
+2014    11
+2015     9
+
+====================================================================================================
+C. WEATHER-VECTOR SHARING (design dependence)
+====================================================================================================
+distinct weather vectors: 545
+
+plots per weather vector: {'count': 545.0, 'mean': 1.8330275229357798, 'std': 1.1293262441762404, 'min': 1.0, '25%': 1.0, '50%': 1.0, '75%': 2.0, 'max': 8.0}
+vectors spanning >1 state: 0  >1 year: 0  >1 environment: 0
+max plots sharing one vector: 8
+plots in a shared vector (n>1): 719
+
+====================================================================================================
+D. UNIVARIATE DISCRIMINATION (descriptive, not model selection)
+====================================================================================================
+                                            predictor                     var  auc_plot_level    auc_direction
+                             mean RH 20d pre (RH.A.1)                  RH.A.1           0.654 higher=more risk
+                                 mean RH 7d pre (RH7)                     RH7           0.650 higher=more risk
+warm-wet hours 9-30&RH80 7d (TRH.9T30nRHG80.PRE7.24H) TRH.9T30nRHG80.PRE7.24H           0.627 higher=more risk
+                          hours RH>=90 7d pre (RH907)                   RH907           0.606 higher=more risk
+                warm-wet hours 15-30&RH80 7d (TRH807)                  TRH807           0.605 higher=more risk
+                  hours RH>=90 20d pre (RH.G90.CHD.1)            RH.G90.CHD.1           0.603 higher=more risk
+                                         corn residue                    corn           0.600 higher=more risk
+                         mean T 7d pre (T.A.PRE7.24H)            T.A.PRE7.24H           0.497 higher=less risk
+                   hours T>30 7d pre (T.G30.PRE7.24H)          T.G30.PRE7.24H           0.443 higher=less risk
+                           mean VPD 10d pre (VPD.A.1)                 VPD.A.1           0.387 higher=less risk
+                      resistance (ordinal VS<S<MS<MR)                  resist           0.375 higher=less risk
+                           mean TDD 20d pre (TDD.A.1)                 TDD.A.1           0.346 higher=less risk
+
+====================================================================================================
+E. WITHIN-ENVIRONMENT OUTCOME VARIABILITY
+====================================================================================================
+share of total S variance that is between environments:
+  0.762
+correlation of S with environment-mean S (plot level): 0.873
+
+S by resistance class, within environments that contain >1 class:
+        size   mean  median
+resist                     
+VS        72  17.05    8.72
+S        216   9.88    4.58
+MS       177   7.35    3.00
+MR       179   4.45    1.28
+
+====================================================================================================
+F. INTERNAL CONSISTENCY OF DERIVED COUNTS
+====================================================================================================
+hours T>=15 + hours T<15 in 7 d (should equal 168): min 192.0 max 192.0
+hours T>30 in 5 d: max 45.0 (theoretical 120)
+RH>=90 hours 7d max: 142 (theoretical 168)
+RH.A.1 range: 47.01483306811854 84.60399310214223
+pressure mean range: 47.01483306811854 (hPa check separately)
+P.A.1: 1007.4331964285715 1022.5745282153191
+VPD.A.1: 0.26328123943712656 1.629684318413958
+mean over 7d of RH vs RH>=90 hours Spearman: 0.85

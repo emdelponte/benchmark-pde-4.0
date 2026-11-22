@@ -241,13 +241,25 @@ skill_vs_rigor <- function(runs) {
                       l, W - rt, Y(v), Y(v), l - 8, Y(v) + 4, v))
   s <- c(s, sprintf('<text x="%.1f" y="%d" class="lab-s" text-anchor="middle">Scientific-conduct score (0–%d, rubric below)</text>', (l + W - rt) / 2, H - 8, xmax),
          sprintf('<text transform="translate(14 %.1f) rotate(-90)" class="lab-s" text-anchor="middle">Weather-only LOYO AUC</text>', (t + H - b) / 2))
-  for (r in pts) {
-    x <- X(rubric_total(r)); y <- Y(r$weather_model$auc)
+  # Spread runs that land on (nearly) the same spot: markers side by side, labels stacked.
+  px <- vapply(pts, function(r) X(rubric_total(r)), 0); py <- vapply(pts, function(r) Y(r$weather_model$auc), 0)
+  grp <- seq_along(pts)
+  for (i in seq_along(pts)) for (j in seq_len(i - 1))
+    if (abs(px[i] - px[j]) < 12 && abs(py[i] - py[j]) < 12) { grp[i] <- grp[j]; break }
+  dx <- dy <- numeric(length(pts))
+  for (g in unique(grp)) {
+    k <- which(grp == g); n <- length(k)
+    if (n > 1) { off <- (seq_len(n) - (n + 1) / 2); dx[k] <- off * 16; dy[k] <- off * 17 }
+  }
+  for (i in seq_along(pts)) {
+    r <- pts[[i]]
+    x <- px[i] + dx[i]; y <- py[i]
+    lx <- min(px[grp == grp[i]] + dx[grp == grp[i]]) - 11; ly <- py[i] + dy[i] + 4
     tip <- sprintf("%s: conduct %d/%d, AUC %s", r$model, as.integer(rubric_total(r)), xmax, fmt(r$weather_model$auc))
     s <- c(s, sprintf(paste0('<g class="pt"><title>%s</title><circle cx="%.1f" cy="%.1f" r="14" fill="transparent"/>',
                              '<circle cx="%.1f" cy="%.1f" r="7" fill="%s" class="ring"/>',
                              '<text x="%.1f" y="%.1f" class="lab" text-anchor="end">%s</text></g>'),
-                      esc(tip), x, y, x, y, r$color, x - 11, y + 4, esc(r$model)))
+                      esc(tip), x, y, x, y, r$color, lx, ly, esc(r$model)))
   }
   paste0('<figure class="viz-wrap narrow">', paste(c(s, "</svg>"), collapse = ""), "</figure>")
 }

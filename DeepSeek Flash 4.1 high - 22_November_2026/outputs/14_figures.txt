@@ -1,0 +1,51 @@
+====================================================================================================
+A. WITHIN-YEAR vs BETWEEN-YEAR DISCRIMINATION (LOYO out-of-fold predictions)
+====================================================================================================
+  'within-year' averages AUC computed inside each year that has both classes.
+  'between-year' uses the 32 year-level means (mean prediction vs event fraction).
+  M1: pooled=0.569  within-year median=0.538 (mean 0.561)  between-year=0.679
+  M2: pooled=0.560  within-year median=0.527 (mean 0.561)  between-year=0.641
+  M4: pooled=0.659  within-year median=0.650 (mean 0.602)  between-year=0.654
+  M5: pooled=0.598  within-year median=0.577 (mean 0.619)  between-year=0.718
+
+  per-year detail for M5 (best weather-only) and M4 (agronomic):
+ year  n_M5  events_M5  auc_M5  n_M4  events_M4  auc_M4
+ 1982     1          0     NaN     1          0     NaN
+ 1984     1          0     NaN     1          0     NaN
+ 1986     1          0     NaN     1          0     NaN
+ 1987     1          0     NaN     1          0     NaN
+ 1988     1          0     NaN     1          0     NaN
+ 1989     1          0     NaN     1          0     NaN
+ 1990     2          1   1.000     2          1   1.000
+ 1991     2          0     NaN     2          0     NaN
+ 1992     2          0     NaN     2          0     NaN
+ 1993     2          1   1.000     2          1   1.000
+ 1994     4          2   0.500     4          2   0.000
+ 1995     6          5   1.000     6          5   0.000
+ 1996     4          2   0.500     4          2   0.500
+ 1997     8          4   1.000     8          4   0.188
+ 1998    10          7   0.810    10          7   0.571
+ 1999    10          1   0.000    10          1   0.444
+ 2000    21          8   0.577    21          8   0.452
+ 2001    17         12   0.742    17         12   0.917
+ 2002    31         10   0.538    31         10   0.581
+ 2003    56         31   0.407    56         31   0.719
+ 2004    77         37   0.400    77         37   0.641
+ 2005    60         31   0.656    60         31   0.584
+ 2006    32          2   1.000    32          2   0.783
+ 2007    11          0     NaN    11          0     NaN
+ 2008    13          2   0.159    13          2   0.636
+ 2009   167         73   0.701   167         73   0.730
+ 2010    81         32   0.482    81         32   0.697
+ 2011    85         41   0.583    85         41   0.650
+ 2012    85          7   0.745    85          7   0.701
+ 2013    69         23   0.548    69         23   0.701
+ 2014    88         35   0.463    88         35   0.674
+ 2015    50         28   0.420    46         24   0.672
+
+figures written to outputs/figures/
+   fig1_outcome.png 39887 bytes
+   fig2_roc.png 49823 bytes
+   fig3_calibration.png 60369 bytes
+   fig4_fold_auc.png 31482 bytes
+   fig5_complexity.png 31654 bytes

@@ -1,0 +1,82 @@
+====================================================================================================
+A. WHERE DOES THE VARIATION LIVE? (variance decomposition of key variables)
+====================================================================================================
+  ww980_per10h   total var= 11.1000  between-year=14.7%  between-state=13.7%
+  rh90_per10h    total var=  7.6928  between-year=11.4%  between-state=23.3%
+  meanRH         total var= 65.5590  between-year=14.4%  between-state=14.6%
+  t30_per10h     total var=  0.3447  between-year=13.5%  between-state=11.7%
+  meanT          total var=  7.7202  between-year=16.2%  between-state=24.0%
+  y              total var=  0.2393  between-year=11.0%  between-state=10.0%
+
+  year-level ecological correlation (32 years, mean weather vs event fraction):
+    ww  : Pearson r = +0.194  (weighted by plots: +0.194)
+    rh  : Pearson r = +0.168  (weighted by plots: +0.168)
+    mrh : Pearson r = +0.222  (weighted by plots: +0.222)
+
+  trial-level (492) correlation of mean weather vs event fraction:
+    ww  : Pearson r = +0.242
+    rh  : Pearson r = +0.178
+    mrh : Pearson r = +0.270
+
+====================================================================================================
+B. WEATHER COEFFICIENT WITH YEAR AND/OR STATE EFFECTS ABSORBED
+====================================================================================================
+  (GLM binomial, cluster-robust SE by weather group; coefficients on logit scale)
+
+  -- exposure: warm-wet hours --
+    unadjusted             n_par=  2  +0.1390 (se 0.0256, p=5.46e-08)
+    + year FE              n_par= 33  +0.0994 (se 0.0286, p=0.000511)
+    + state FE             n_par= 18  +0.1509 (se 0.0311, p=1.25e-06)
+    + year FE + state FE   n_par= 49  +0.1058 (se 0.0330, p=0.00136)
+
+  -- exposure: mean RH --
+    unadjusted             n_par=  2  +0.0673 (se 0.0113, p=2.68e-09)
+    + year FE              n_par= 33  +0.0502 (se 0.0122, p=3.77e-05)
+    + state FE             n_par= 18  +0.0734 (se 0.0137, p=8.55e-08)
+    + year FE + state FE   n_par= 49  +0.0537 (se 0.0140, p=0.000127)
+
+  -- exposure: RH>=90 h + T>30 h --
+    unadjusted             n_par=  3  +0.1210 (se 0.0320, p=0.000159), -0.1021 (se 0.1576, p=0.517)
+    + year FE              n_par= 34  +0.0868 (se 0.0349, p=0.0129), -0.0447 (se 0.1561, p=0.774)
+    + state FE             n_par= 19  +0.1571 (se 0.0412, p=0.000136), +0.0680 (se 0.1892, p=0.719)
+    + year FE + state FE   n_par= 50  +0.1099 (se 0.0422, p=0.0092), +0.1283 (se 0.1939, p=0.508)
+
+====================================================================================================
+C. INFLUENCE OF 2009 AND OF THE DENSEST STATE ON THE WEATHER COEFFICIENT
+====================================================================================================
+  all data         mean RH     : coef=+0.0673  OR per SD=1.725  p=2.68e-09  n=999
+  all data         warm-wet h  : coef=+0.1390  OR per SD=1.589  p=5.46e-08  n=999
+  drop 2009        mean RH     : coef=+0.0577  OR per SD=1.588  p=1.64e-06  n=832
+  drop 2009        warm-wet h  : coef=+0.1185  OR per SD=1.454  p=3.59e-05  n=832
+  drop ND (265 plots) mean RH     : coef=+0.0648  OR per SD=1.716  p=4.4e-07  n=734
+  drop ND (265 plots) warm-wet h  : coef=+0.1272  OR per SD=1.565  p=5.5e-06  n=734
+  drop ND and 2009 mean RH     : coef=+0.0562  OR per SD=1.585  p=7.16e-05  n=594
+  drop ND and 2009 warm-wet h  : coef=+0.1018  OR per SD=1.398  p=0.0017  n=594
+
+====================================================================================================
+D. WITHIN-YEAR CONTRASTS (years with >=3 trials and both outcome classes)
+====================================================================================================
+ year   n  trials  event_frac  meanRH_lo  meanRH_hi  rh90_lo  rh90_hi
+ 1994   4       4       0.500     65.319     71.787      0.3      3.9
+ 1995   6       5       0.833     73.359     77.905      1.0      5.3
+ 1996   4       4       0.500     70.729     81.257      2.2      7.5
+ 1997   8       7       0.500     50.156     78.810      0.0      5.9
+ 1998  10       8       0.700     55.643     81.210      0.0      5.9
+ 1999  10      10       0.100     59.003     83.694      0.0      9.6
+ 2000  21      16       0.381     54.684     82.219      0.0      7.7
+ 2001  17      15       0.706     58.773     85.536      0.4      9.9
+ 2002  31      24       0.323     58.320     76.962      0.4      5.1
+ 2003  56      25       0.554     61.227     81.607      0.8      9.0
+ 2004  77      33       0.481     56.128     90.797      0.4     11.9
+ 2005  60      27       0.517     53.928     79.787      0.3      8.3
+ 2006  32      11       0.062     61.651     70.531      0.9      6.3
+ 2008  13      10       0.154     52.099     78.609      0.0      5.7
+ 2009 167      60       0.437     55.843     91.009      0.0     12.9
+ 2010  81      34       0.395     50.982     86.072      0.1     10.0
+ 2011  85      30       0.482     44.488     91.694      0.0     14.2
+ 2012  85      39       0.082     50.003     79.893      0.0      6.5
+ 2013  69      37       0.333     59.613     84.318      0.0      9.5
+ 2014  88      47       0.398     40.171     88.817      0.0     11.8
+ 2015  50      24       0.560     63.637     78.834      1.4      7.0
+
+  years usable for within-year contrast: 21 of 32

@@ -10,3 +10,6 @@ __pycache__/
 .quarto/
 # Local copies of the public Zenodo dataset (not needed to render the report)
 Gemini Carbon Medium - 22_November_2026/data/
+DeepSeek Flash 4.1 high - 22_November_2026/data/
+.tmp/
+*.pkl

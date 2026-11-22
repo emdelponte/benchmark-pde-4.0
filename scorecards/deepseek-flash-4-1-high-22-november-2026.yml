@@ -1,0 +1,65 @@
+# Curated scorecard. Folder: "DeepSeek Flash 4.1 high - 22_November_2026"
+# Chart values use the agent's post-hoc S >= 10% alignment (outputs/threshold10_alignment.csv),
+# so they compare like-for-like with the other runs. Its pre-registered outcome was S >= 5%.
+model: DeepSeek Flash 4.1 high
+provider: DeepSeek
+tagline: The pre-registration purist
+verdict: The most disciplined run so far. It kept a weak pre-registered model rather than swap in a better one, and showed that weather sorts seasons, not fields.
+outcome: "Pre-registered S ≥ 5% (395 / 604), chosen before any literature because no binary column exists. After the literature search it re-ran everything at S ≥ 10% (273 / 726), labelled as post hoc. Chart values are the 10% ones."
+
+weather_model:
+  label: "M2: hours RH ≥ 90% + hours T > 30 °C (d −7…0)"
+  n_params: 2
+  auc: 0.616
+  auc_lo: 0.569
+  auc_hi: 0.665
+  ci_method: "cluster bootstrap resampling 545 weather records; values at S ≥ 10% (post-hoc alignment). Pre-registered S ≥ 5%: 0.560 (0.514–0.605)"
+  brier: 0.194
+  cal_slope: 0.78
+
+host_model:
+  label: "M4: M2 + resistance class + corn residue"
+  n_params: 4
+  auc: 0.689
+  auc_lo: 0.647
+  auc_hi: 0.731
+  ci_method: "cluster bootstrap by weather record; S ≥ 10% (post hoc). At S ≥ 5%: 0.659 (0.624–0.696)"
+  brier: 0.182
+  cal_slope: 0.87
+
+validation: "Leave-one-year-out (32), leave-one-state-out (17) and five chronological year blocks, with all scaling and the ridge penalty fitted inside folds. Cluster-bootstrap CIs and cluster-robust SEs by weather record (545)."
+
+key_findings:
+  - "Moisture is the only robust weather signal (OR ≈ 1.13 per +10 h of RH ≥ 90%). It survives year and state fixed effects, attenuated by 25–30%."
+  - "The pre-registered heat term (T > 30 °C hours) is null in the binary model, and mean temperature adds at most 0.02 AUC."
+  - "Weather sorts seasons, not fields: AUC across year means is 0.64–0.72, but the median within a year is only 0.53–0.58."
+  - "Dropping 2009 (17% of plots) collapses weather-only LOYO AUC to 0.498."
+  - "Mean RH alone beats its primary model (0.658 at S ≥ 10%). Mean RH + resistance + corn reaches 0.719."
+  - "Used as a screener, the weather-only model has sensitivity 0.12 at a 0.5 cut-off and PPV barely above the base rate."
+
+strengths:
+  - "Kept the pre-registered primary model and outcome even after a pre-specified alternative beat them, and said so rather than swapping."
+  - "The within-year vs between-year split and the leave-2009-out check are the sharpest diagnostics of where the signal comes from in any run."
+  - "Its literature search was verified against Crossref, PubMed and DataCite, unverifiable details are flagged, and the post-hoc 10% alignment is clearly separated."
+  - "It translates results into decision terms (sensitivity, PPV, % flagged) and reports Brier skill against the base rate."
+
+concerns:
+  - "Its own outcome (S ≥ 5%) is not the field convention, so the headline numbers in results.md are not comparable with the other runs without its post-hoc table."
+  - "Day-0 windows are accepted as an end-of-anthesis-day assessment and called untestable; no earlier-lead-time model was fitted."
+  - "Bootstrap and SEs cluster on weather records, not years, so the intervals may still be somewhat narrow for between-season inference (inferred)."
+  - "Its candidate set excluded temperature-variability terms a priori, which it later concedes was a gap."
+  - "Its data/ folder holds about 100 MB of Python wheels, plus a .tmp/ pip cache and pickled data in outputs/."
+
+literature: "Separates estimands carefully and treats the published 0.79–0.90 AUCs as using information it was not allowed to use. It reconstructs the field's S ≥ 10% outcome exactly (273 / 999) and appends rather than edits its earlier claims."
+
+rubric:
+  audit: 2
+  timing: 1
+  outcome: 2
+  parsimony: 2
+  validation: 2
+  calibration: 2
+  sensitivity: 2
+  negatives: 2
+  literature: 2
+  claims: 2

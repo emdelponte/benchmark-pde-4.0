@@ -7,51 +7,60 @@ claims:
       gpt-6-1-sol-medium-10-october-2026: {status: yes, note: "0.616"}
       gemini-flash-3-8-high-10-october-2026: {status: yes, note: "0.656"}
       gemini-carbon-medium-22-november-2026: {status: yes, note: "0.671 (M2r)"}
+      deepseek-flash-4-1-high-22-november-2026: {status: yes, note: "0.616 at 10% (0.560 at 5%)"}
   - claim: "Moisture (RH / VPD) carries most of the weather signal"
     models:
       claude-opus-5-5-10-october-2026: {status: yes, note: "mean RH; T null"}
       gpt-6-1-sol-medium-10-october-2026: {status: partial, note: "moisture alone 0.54; needs T"}
       gemini-flash-3-8-high-10-october-2026: {status: yes, note: "overnight RH"}
       gemini-carbon-medium-22-november-2026: {status: yes, note: "RH7 / VPD; proximal T null"}
+      deepseek-flash-4-1-high-22-november-2026: {status: yes, note: "RH ≥ 90% hours; mean RH best"}
   - claim: "Temperature adds predictive information"
     models:
       claude-opus-5-5-10-october-2026: {status: partial, note: "no (d −10…0), yes (d −20…−10)"}
       gpt-6-1-sol-medium-10-october-2026: {status: yes, note: "OR 2.2 per 5 °C"}
       gemini-flash-3-8-high-10-october-2026: {status: yes, note: "small, OR 1.02/h"}
       gemini-carbon-medium-22-november-2026: {status: partial, note: "no (d −7…0), yes (d −20…−10)"}
+      deepseek-flash-4-1-high-22-november-2026: {status: no, note: "heat null; mean T ≤ +0.02"}
   - claim: "Host resistance adds ≈ +0.05 AUC over weather"
     models:
       claude-opus-5-5-10-october-2026: {status: yes, note: "+0.059 (with corn)"}
       gpt-6-1-sol-medium-10-october-2026: {status: partial, note: "not fitted; shows miscalibration by class"}
       gemini-flash-3-8-high-10-october-2026: {status: yes, note: "+0.053"}
       gemini-carbon-medium-22-november-2026: {status: yes, note: "+0.057 (with corn)"}
+      deepseek-flash-4-1-high-22-november-2026: {status: yes, note: "+0.073 (with corn)"}
   - claim: "Interactions / nonlinear terms do not help"
     models:
       claude-opus-5-5-10-october-2026: {status: yes, note: "RH×T, splines"}
       gpt-6-1-sol-medium-10-october-2026: {status: yes, note: "quadratic T"}
       gemini-flash-3-8-high-10-october-2026: {status: yes, note: "RH×T"}
       gemini-carbon-medium-22-november-2026: {status: yes, note: "RH×T, quadratic T, GAM"}
+      deepseek-flash-4-1-high-22-november-2026: {status: yes, note: "quadratic, ridge"}
   - claim: "Random forest does not beat logistic regression"
     models:
       claude-opus-5-5-10-october-2026: {status: yes, note: "+0.015, CI spans 0"}
       gpt-6-1-sol-medium-10-october-2026: {status: na, note: "not run"}
       gemini-flash-3-8-high-10-october-2026: {status: yes, note: "0.600 (2 vars only)"}
       gemini-carbon-medium-22-november-2026: {status: na, note: "not run (GAM, LASSO worse)"}
+      deepseek-flash-4-1-high-22-november-2026: {status: na, note: "not run"}
   - claim: "Exposure-window length barely matters"
     models:
       claude-opus-5-5-10-october-2026: {status: yes, note: "5–15 d: 0.637–0.649"}
       gpt-6-1-sol-medium-10-october-2026: {status: no, note: "earlier T windows degrade"}
       gemini-flash-3-8-high-10-october-2026: {status: yes, note: "7/10/14 d ≈ equal"}
       gemini-carbon-medium-22-november-2026: {status: yes, note: "7–15 d: 0.637–0.649"}
+      deepseek-flash-4-1-high-22-november-2026: {status: yes, note: "−5…−15 d: 0.59–0.61"}
   - claim: "Pooled calibration hides group-level miscalibration"
     models:
       claude-opus-5-5-10-october-2026: {status: yes, note: "years compressed; MO, PA"}
       gpt-6-1-sol-medium-10-october-2026: {status: yes, note: "by state and resistance"}
       gemini-flash-3-8-high-10-october-2026: {status: yes, note: "spring wheat slope 0.12"}
       gemini-carbon-medium-22-november-2026: {status: yes, note: "by state; spring wheat"}
+      deepseek-flash-4-1-high-22-november-2026: {status: yes, note: "within-year 0.53; 2009 drives it"}
   - claim: "Row-level / random CV would be optimistic"
     models:
       claude-opus-5-5-10-october-2026: {status: yes, note: "quantified (+0.016 AUC)"}
       gpt-6-1-sol-medium-10-october-2026: {status: yes, note: "argued, not quantified"}
       gemini-flash-3-8-high-10-october-2026: {status: yes, note: "argued, not quantified"}
       gemini-carbon-medium-22-november-2026: {status: yes, note: "quantified (+0.04 to +0.21)"}
+      deepseek-flash-4-1-high-22-november-2026: {status: yes, note: "argued; apparent optimism 0.03–0.05"}

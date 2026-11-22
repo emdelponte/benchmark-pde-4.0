@@ -1,0 +1,352 @@
+====================================================================================================
+1. DIMENSIONS AND UNIT OF OBSERVATION
+====================================================================================================
+rows x cols: (999, 337)
+
+head of design columns:
+    id  year state                     fdate    type resist  corn     S
+0    1  1982    OH 1982-05-26 00:00:00+00:00  winter      S   0.0   0.0
+1    2  1984    OH 1984-06-06 00:00:00+00:00  winter      S   0.0   0.0
+2    3  1986    OH 1986-05-27 00:00:00+00:00  winter      S   0.0   0.0
+3    4  1987    OH 1987-05-26 00:00:00+00:00  winter      S   0.0   0.0
+4    5  1988    OH 1988-05-28 00:00:00+00:00  winter      S   0.0   0.0
+5    6  1989    OH 1989-06-03 00:00:00+00:00  winter      S   0.0   0.0
+6    7  1990    KS 1990-05-21 00:00:00+00:00  winter      S   0.0  24.0
+7    8  1990    OH 1990-05-23 00:00:00+00:00  winter      S   0.0   0.0
+8    9  1991    OH 1991-05-22 00:00:00+00:00  winter      S   0.0   0.0
+9   10  1991    OH 1991-05-20 00:00:00+00:00  winter      S   0.0   0.0
+10  11  1992    KS 1992-05-23 00:00:00+00:00  winter      S   0.0   0.0
+11  12  1992    OH 1992-05-26 00:00:00+00:00  winter      S   0.0   0.0
+
+date range: 1982-05-26 00:00:00+00:00 -> 2015-07-14 00:00:00+00:00
+years: [np.int32(1982), np.int32(1984), np.int32(1986), np.int32(1987), np.int32(1988), np.int32(1989), np.int32(1990), np.int32(1991), np.int32(1992), np.int32(1993), np.int32(1994), np.int32(1995), np.int32(1996), np.int32(1997), np.int32(1998), np.int32(1999), np.int32(2000), np.int32(2001), np.int32(2002), np.int32(2003), np.int32(2004), np.int32(2005), np.int32(2006), np.int32(2007), np.int32(2008), np.int32(2009), np.int32(2010), np.int32(2011), np.int32(2012), np.int32(2013), np.int32(2014), np.int32(2015)]
+n years: 32  n states: 17
+
+rows per year:
+year
+1982      1
+1984      1
+1986      1
+1987      1
+1988      1
+1989      1
+1990      2
+1991      2
+1992      2
+1993      2
+1994      4
+1995      6
+1996      4
+1997      8
+1998     10
+1999     10
+2000     21
+2001     17
+2002     31
+2003     56
+2004     77
+2005     60
+2006     32
+2007     11
+2008     13
+2009    167
+2010     81
+2011     85
+2012     85
+2013     69
+2014     88
+2015     50
+
+rows per state:
+state
+ND    265
+IL    104
+OH     99
+MD     86
+IN     81
+SD     75
+KS     49
+MO     49
+PA     46
+MN     33
+MI     25
+WI     25
+NY     22
+NE     17
+KY     14
+DE      5
+AR      4
+
+cross-tab state x wheat type:
+type   spring  winter
+state                
+AR          0       4
+DE          0       5
+IL          0     104
+IN          0      81
+KS          0      49
+KY          0      14
+MD          0      86
+MI          0      25
+MN         33       0
+MO          0      49
+ND        170      95
+NE          0      17
+NY          0      22
+OH          0      99
+PA          0      46
+SD         62      13
+WI          0      25
+
+resist levels: {'S': 412, 'MR': 239, 'MS': 213, 'VS': 135}
+type levels: {'winter': 734, 'spring': 265}
+corn levels: {0.0: 647, 1.0: 348, nan: 4}
+
+-- grouping structure --
+unique state+year: 142  (median rows/group 4, max 50, singleton groups 23)
+unique state+year+fdate: 492  (median rows/group 2, max 10, singleton groups 232)
+unique state+year+fdate+type: 492  (median rows/group 2, max 10, singleton groups 232)
+unique state+year+fdate+resist: 791  (median rows/group 1, max 4, singleton groups 603)
+unique state+year+fdate+type+resist+corn: 933  (median rows/group 1, max 4, singleton groups 870)
+
+-- exact duplicate rows (all 337 cols) --
+n duplicate rows: 0
+
+====================================================================================================
+2. RESPONSE VARIABLE S (FHB index, %)
+====================================================================================================
+count    999.000000
+mean       8.813017
+std       13.703410
+min        0.000000
+1%         0.000000
+5%         0.000000
+10%        0.000000
+25%        0.196667
+50%        2.868139
+75%       11.314167
+90%       25.870000
+95%       39.523050
+99%       65.141000
+max       86.180000
+
+zeros: 186 (18.6%)
+S < 0 or > 100: 0
+
+S distribution by year (median, mean, n, ninf>=5%):
+        n  median   mean    q90  pct_ge5
+year                                    
+1982    1    0.00   0.00   0.00     0.00
+1984    1    0.00   0.00   0.00     0.00
+1986    1    0.00   0.00   0.00     0.00
+1987    1    0.00   0.00   0.00     0.00
+1988    1    0.00   0.00   0.00     0.00
+1989    1    0.00   0.00   0.00     0.00
+1990    2   12.00  12.00  21.60    50.00
+1991    2    0.00   0.00   0.00     0.00
+1992    2    0.00   0.00   0.00     0.00
+1993    2   22.50  22.50  40.50    50.00
+1994    4    8.90  11.20  24.24    50.00
+1995    6   26.00  25.83  46.50    83.33
+1996    4    8.35   9.05  18.15    50.00
+1997    8    4.55   8.50  20.15    50.00
+1998   10   12.20  16.14  33.80    70.00
+1999   10    0.43   6.98   7.95    10.00
+2000   21    1.27   7.22  23.56    38.10
+2001   17   18.77  19.33  37.25    70.59
+2002   31    1.70   4.21  10.90    32.26
+2003   56    5.82  14.97  45.66    55.36
+2004   77    4.69  10.86  27.61    48.05
+2005   60    5.22   6.98  16.19    51.67
+2006   32    0.53   1.75   3.17     6.25
+2007   11    0.00   0.00   0.01     0.00
+2008   13    0.01   3.53  13.34    15.38
+2009  167    3.38  13.30  41.73    43.71
+2010   81    1.84   7.52  22.87    39.51
+2011   85    4.15   9.35  24.93    48.24
+2012   85    0.00   1.30   3.81     8.24
+2013   69    2.80   6.75  18.26    33.33
+2014   88    3.33   8.22  24.21    39.77
+2015   50    5.43   9.36  19.70    56.00
+
+S distribution by state:
+         n  median   mean  pct_ge5
+state                             
+AR       4    2.15   2.39     0.00
+DE       5    0.49   1.11     0.00
+IL     104    4.68   9.21    48.08
+IN      81    7.57  12.93    56.79
+KS      49    0.00   4.71    14.29
+KY      14    4.24   4.80    42.86
+MD      86    6.20  20.11    54.65
+MI      25    0.01   1.60     8.00
+MN      33    3.75   4.94    33.33
+MO      49   18.52  16.83    69.39
+ND     265    1.60   5.94    35.09
+NE      17    3.65   8.01    47.06
+NY      22    0.49   1.75    13.64
+OH      99    2.15   8.63    35.35
+PA      46    2.12   3.47    23.91
+SD      75    5.46  12.66    53.33
+WI      25    0.04   0.64     8.00
+
+S by wheat type:
+        count  mean    std  min   25%   50%   75%    max
+type                                                    
+spring  265.0  7.09  11.26  0.0  0.33  2.55   9.1  66.84
+winter  734.0  9.44  14.44  0.0  0.18  2.99  12.7  86.18
+
+S by resistance class:
+        count   mean    std  min   25%   50%    75%    max
+resist                                                    
+VS      135.0  17.67  21.67  0.0  0.93  8.84  25.74  86.18
+S       412.0   9.70  13.70  0.0  0.09  3.38  13.36  71.66
+MS      213.0   6.74   9.58  0.0  0.33  2.67   8.91  41.47
+MR      239.0   4.14   6.75  0.0  0.04  1.27   4.76  39.66
+
+S by corn residue:
+      count   mean    std   min   25%   50%    75%    max
+corn                                                     
+0.0   647.0   6.63  11.27  0.00  0.00  1.38   8.88  84.00
+1.0   348.0  12.87  16.67  0.00  1.79  5.69  18.28  86.18
+NaN     4.0   9.81   4.25  5.37  7.92  9.15  11.04  15.58
+
+-- candidate binary outcome thresholds --
+   threshold_pct  events  nonevents  prevalence
+0              0     813        186      0.8138
+1              1     633        366      0.6336
+2              2     551        448      0.5516
+3              5     393        606      0.3934
+4             10     271        728      0.2713
+5             15     201        798      0.2012
+6             20     156        843      0.1562
+7             25     104        895      0.1041
+8             30      79        920      0.0791
+
+====================================================================================================
+3. MISSINGNESS AND DATA-QUALITY CHECKS
+====================================================================================================
+columns with any NA: 1
+corn    4
+
+constant columns: []
+
+columns violating documented valid_range: 0
+
+====================================================================================================
+4. CLUSTERING / EFFECTIVE SAMPLE SIZE
+====================================================================================================
+unique state-year-anthesis-date environments: 492
+plots per environment: median 2.0 max 10 environments with 1 plot: 232
+
+how many distinct weather vectors? (rows with identical weather block):
+n weather columns: 329
+n unique weather vectors: 545
+
+ICC-style check: variance of S between vs within environment groups
+between-group MS=291.01, within-group MS=87.82, approx ICC=0.533
+
+====================================================================================================
+5. WEATHER PREDICTOR STRUCTURE
+====================================================================================================
+weather vars with analysis_period pre or end day <=0: 174
+
+analysis_period counts (for weather vars in data):
+analysis_period
+pre         174
+post        137
+pre-post     18
+NaN           8
+
+window_end_day value counts:
+window_end_day
+-70.0      1
+-60.0      1
+-50.0      3
+-40.0      4
+-35.0      1
+-30.0      1
+-25.0      1
+-20.0      1
+-15.0      1
+-10.0      6
+-5.0       3
+ 0.0     151
+ 5.0      24
+ 7.0      23
+ 10.0     56
+ 14.0     23
+ 15.0     24
+ 20.0      5
+ NaN       8
+
+window_start_day value counts:
+window_start_day
+-100.0      1
+-80.0       1
+-70.0       1
+-60.0       7
+-50.0       2
+-45.0       1
+-40.0      15
+-30.0      11
+-25.0       1
+-20.0      21
+-15.0      26
+-14.0      23
+-10.0      32
+-7.0       27
+-5.0       23
+ 0.0      136
+ 10.0       1
+ NaN        8
+
+[metadata gaps] weather columns missing window bounds in YAML: 8
+   ['id', 'year', 'state', 'fdate', 'type', 'resist', 'corn', 'S']
+  YAML fields NOT carried into the flattened dictionary: ['day', 'origin', 'period', 'summary', 'variable_name', 'variable_type', 'win_end_day', 'win_end_period', 'win_length', 'win_start_day', 'win_start_period']
+
+time_step / day combos (from VariablesMetaData.csv):
+time_step_csv  day
+daily          12h     30
+               24h     88
+hourly         12h     90
+               24h    121
+NaN            NaN      8
+
+metric counts (YAML vs CSV):
+       yaml  csv
+count   219  219
+mean    110  110
+NaN       8    8
+
+disagreements in window bounds between YAML and CSV:
+                       window_start_day  win_start_day  window_end_day  win_end_day
+name                                                                               
+T.A.1                             -25.0           25.0           -15.0         15.0
+T.A.2                             -20.0           20.0           -10.0         10.0
+T.A.3                             -40.0           40.0           -30.0         30.0
+D.A.2                             -20.0           20.0           -10.0         10.0
+D.A.3                             -40.0           40.0           -25.0         25.0
+P.A.1                             -40.0           40.0           -20.0         20.0
+P.A.2                             -45.0           45.0           -35.0         35.0
+P.A.3                             -60.0           60.0           -50.0         50.0
+P.A.4                             -80.0           80.0           -70.0         70.0
+P.A.5                            -100.0          100.0           -60.0         60.0
+T.G30.CHD.2                       -60.0           60.0           -40.0         40.0
+TRH.15T30nRHG80.CHD.2             -60.0           60.0           -40.0         40.0
+TRH.15T30nRHG90.CHD.2             -60.0           60.0           -40.0         40.0
+VPD.L11.CHD.1                     -15.0           15.0            -5.0          5.0
+VPD.L635.CHD.1                    -15.0           15.0            -5.0          5.0
+RH.G70.CD.1                       -40.0           40.0           -10.0         10.0
+T.14T22.CD.2                      -60.0           60.0           -40.0         40.0
+RH.MINMAXDIFF.1                   -20.0           20.0           -10.0         10.0
+P.MINMAXDIFF.1                    -60.0           60.0           -50.0         50.0
+D.MINMAXDIFF.2                    -40.0           40.0            -5.0          5.0
+D.SD.2                            -40.0           40.0           -10.0         10.0
+P.SD.1                            -60.0           60.0           -50.0         50.0
+RH.SD.2                           -20.0           20.0           -10.0         10.0
+
+-- extreme-value / sentinel screening on weather vars --
+near-constant / all-zero columns: 1
+             count   mean    std  min  25%  50%  75%   max  n_zero  n_neg
+T.G30.CHD.2  999.0  0.623  2.531  0.0  0.0  0.0  0.0  19.0     914      0

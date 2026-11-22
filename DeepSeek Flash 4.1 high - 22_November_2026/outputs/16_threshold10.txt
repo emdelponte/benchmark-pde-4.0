@@ -1,0 +1,48 @@
+====================================================================================================
+0. EVENT COUNTS: does an independent 10% rule reproduce the published 273 epidemics?
+====================================================================================================
+  S >= 5%: 395 events of 999
+  S >= 10%: 273 events of 999
+  Published (Shah et al. 2019b, Phil Trans R Soc B): 273 epidemics / 726 non-epidemics
+  -> the 273 matches S >= 10% exactly, i.e. the associated literature's binary outcome
+     is reconstructible from S and is NOT stored in the release.
+
+====================================================================================================
+1. LOYO PERFORMANCE AT THE 10% 'MAJOR EPIDEMIC' THRESHOLD (post hoc)
+====================================================================================================
+  prevalence only                                k=0  AUC=0.500 [0.500,0.500]  Brier=0.199  slope=nan
+  mean RH, -7..0 d (1 term)                      k=1  AUC=0.658 [0.605,0.709]  Brier=0.188  slope=0.90
+  RH>=90 h, -7..0 d (1 term)                     k=1  AUC=0.615 [0.564,0.667]  Brier=0.194  slope=0.83
+  De Wolf 2003: h 15-30C & RH>=90, -7..0 d       k=1  AUC=0.552 [0.492,0.610]  Brier=0.200  slope=0.43
+  h 15-30C & RH>=80, -7..0 d                     k=1  AUC=0.567 [0.507,0.625]  Brier=0.198  slope=0.54
+  warm-wet h 9-30C & RH>=80 (M5 moisture term)   k=1  AUC=0.636 [0.581,0.689]  Brier=0.190  slope=0.90
+  M1: RH>=90 h                                   k=1  AUC=0.615 [0.564,0.667]  Brier=0.194  slope=0.83
+  M2 (primary): RH>=90 h + T>30 h                k=2  AUC=0.616 [0.569,0.665]  Brier=0.194  slope=0.78
+  M5: warm-wet h + T>30 h                        k=2  AUC=0.639 [0.586,0.691]  Brier=0.190  slope=0.86
+  mean RH + T>30 h                               k=2  AUC=0.661 [0.606,0.709]  Brier=0.189  slope=0.86
+  M3: M2 + mean T                                k=3  AUC=0.602 [0.555,0.652]  Brier=0.196  slope=0.67
+  M4: M2 + resistance + corn                     k=4  AUC=0.689 [0.647,0.731]  Brier=0.182  slope=0.87
+  mean RH + resistance + corn                    k=3  AUC=0.719 [0.674,0.761]  Brier=0.175  slope=0.91
+
+====================================================================================================
+2. SAME SPECIFICATIONS AT THE PRE-SPECIFIED 5% THRESHOLD (for contrast)
+====================================================================================================
+  mean RH, -7..0 d (1 term)                      k=1  AUC=0.635 [0.586,0.682]  Brier=0.228
+  RH>=90 h, -7..0 d (1 term)                     k=1  AUC=0.569 [0.522,0.614]  Brier=0.237
+  De Wolf 2003: h 15-30C & RH>=90, -7..0 d       k=1  AUC=0.552 [0.501,0.602]  Brier=0.240
+  h 15-30C & RH>=80, -7..0 d                     k=1  AUC=0.573 [0.523,0.625]  Brier=0.238
+  warm-wet h 9-30C & RH>=80 (M5 moisture term)   k=1  AUC=0.607 [0.558,0.656]  Brier=0.232
+  M1: RH>=90 h                                   k=1  AUC=0.569 [0.522,0.614]  Brier=0.237
+  M2 (primary): RH>=90 h + T>30 h                k=2  AUC=0.560 [0.514,0.605]  Brier=0.238
+  M5: warm-wet h + T>30 h                        k=2  AUC=0.598 [0.550,0.646]  Brier=0.233
+  mean RH + T>30 h                               k=2  AUC=0.625 [0.576,0.672]  Brier=0.230
+  M3: M2 + mean T                                k=3  AUC=0.563 [0.517,0.610]  Brier=0.240
+  M4: M2 + resistance + corn                     k=4  AUC=0.657 [0.620,0.692]  Brier=0.221
+  mean RH + resistance + corn                    k=3  AUC=0.693 [0.655,0.730]  Brier=0.213
+
+====================================================================================================
+3. IN-SAMPLE FIT OF THE DE WOLF (2003) PRE-ANTHESIS TERMS FOR INTERPRETATION
+====================================================================================================
+  h 15-30C & RH>=90 (7 d pre)        coef=+0.1701  OR per 10 h (or per % for RH)=1.185 [1.077,1.304]  p=0.000489
+  h 15-30C & RH>=80 (7 d pre)        coef=+0.1289  OR per 10 h (or per % for RH)=1.138 [1.059,1.221]  p=0.000387
+  mean RH (7 d pre)                  coef=+0.0772  OR per 10 h (or per % for RH)=1.080 [1.054,1.108]  p=1.27e-09
