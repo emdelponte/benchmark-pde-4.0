@@ -1,0 +1,63 @@
+# Curated scorecard. Folder: "Gemini Carbon Medium - 22_November_2026"
+model: Gemini Carbon Medium
+provider: Google
+tagline: The thorough prosecutor
+verdict: The most complete validation of the four and the best weather-only numbers, but its final model was trimmed after looking at the data and its prose still says "proof".
+outcome: "S ≥ 10% (273 / 726). It noted that no binary column exists, chose the threshold from the USWBSI convention, and pre-specified checks at 5%, >10% and 15%."
+
+weather_model:
+  label: "M2r: VPD (d −10…0) + mean T (d −20…−10)"
+  n_params: 2
+  auc: 0.671
+  auc_lo: 0.587
+  auc_hi: 0.743
+  ci_method: "cluster bootstrap on pooled out-of-fold predictions (DeLong CIs also reported)"
+  brier: 0.185
+  cal_slope: 0.89
+
+host_model:
+  label: "M2 + resistance + corn residue"
+  n_params: 7
+  auc: 0.723
+  auc_lo: null
+  auc_hi: null
+  ci_method: "no CI reported"
+  brier: 0.173
+  cal_slope: 0.85
+
+validation: "Leave-one-year-out (32), leave-one-state-out (17) and 5×10-fold grouped state×year CV, with screening and scaling nested in folds. Random 10-fold row CV run only as a leakage check. Sandwich SEs clustered by state×year (142 clusters)."
+
+key_findings:
+  - "Proximal moisture carries the signal (RH7: OR 2.1 per +10% RH). Temperature in the last 7–15 days is null, but warmth 20 to 10 days before anthesis is positive (OR 1.35 per +2 °C)."
+  - "The pre-specified 3-term M2 scored 0.666. Dropping its redundant threshold-hours term (p = 0.73) gave M2r at 0.671. A 1-term RH7 model is close behind at 0.658."
+  - "Flexible models generalise worse: L1-selected GLM 0.651 (slope 0.66), 174-variable LASSO 0.447, bivariate GAM 0.613 (slope 0.45)."
+  - "Random row-level CV inflates flexible models by 0.04 to 0.21 AUC (GAM 0.613 → 0.696), quantified on the same folds."
+  - "Adding resistance and corn residue lifts LOYO AUC from 0.666 to 0.723 and roughly doubles Brier skill (6.8% → 13.6%). Resistance plus corn with no weather already reaches 0.649."
+  - "Spring wheat in ND, SD and MN fails (AUC ≈ 0.57, negative Brier skill). Forecasting 5 days before anthesis drops AUC to 0.616."
+
+strengths:
+  - "Broadest validation of the four runs: three grouped schemes plus a controlled random-CV leakage test, with every selection step nested."
+  - "Deep audit: the UTC '12H overnight' inversion, the win_length off-by-one, the parquet/csv schema mismatch, and an effective sample of about 22 state-year events."
+  - "Treats the day-0 window as available only at the end of the flowering date, and measures what an earlier issue time costs."
+  - "Reports its failures in detail: years 2002 and 2013, zero-event states, Corn Belt under-prediction and spring wheat."
+
+concerns:
+  - "The recommended M2r is a post-hoc reduction chosen after seeing full-sample p-values. It is disclosed and logged, but the headline 0.671 carries that selection; the pre-specified M2 scored 0.666."
+  - "Overclaims: 'direct empirical proof', 'proving', 'fully reconciles' the gap to the literature, and frequent exclamation marks."
+  - "Several numbers in comparison_with_literature.md do not match results.md (for example GAM 0.594/0.648 vs 0.608/0.613, LASSO 0.556 vs 0.447, 12H check 0.657→0.649 vs 0.645→0.637)."
+  - "It calls the S ≥ 10% choice 'independent', though it came from knowledge of the USWBSI convention."
+  - "No CI for the host model, and its data/ folder keeps copies of the dataset in the repository."
+
+literature: "Six papers, read only after locking results. It separates estimands well (host and post-anthesis terms, row-level CV) and argues that random CV flatters RF and ensembles. That argument is reasonable but partly speculative, and some cited figures drift from its own results."
+
+rubric:
+  audit: 2
+  timing: 2
+  outcome: 1
+  parsimony: 2
+  validation: 2
+  calibration: 2
+  sensitivity: 2
+  negatives: 2
+  literature: 1
+  claims: 1

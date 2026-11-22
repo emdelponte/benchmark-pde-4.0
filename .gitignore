@@ -8,3 +8,5 @@ __pycache__/
 .Rhistory
 *_files/
 .quarto/
+# Local copies of the public Zenodo dataset (not needed to render the report)
+Gemini Carbon Medium - 22_November_2026/data/
