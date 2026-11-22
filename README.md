@@ -1,6 +1,6 @@
 # GenAI × Plant-Disease Epidemiology Benchmark (FHB, v4.0)
 
-This repository holds the outputs of autonomous AI agents that were each given the same task: build and critically evaluate a parsimonious logistic model that predicts Fusarium head blight (FHB) epidemics from weather available by wheat anthesis (USWBSI dataset v2.1, Zenodo record 23189372). It also holds a summary report that compares them.
+This repository holds the outputs of autonomous AI agents (four runs so far, added between October and November 2026) that were each given the same task: build and critically evaluate a parsimonious logistic model that predicts Fusarium head blight (FHB) epidemics from weather available by wheat anthesis (USWBSI dataset v2.1, Zenodo record 23189372). It also holds a summary report that compares them.
 
 `index.qmd` renders `index.html`, a self-contained report that compares the main results, cross-model agreement and scientific conduct of every model run in this repository.
 
@@ -15,12 +15,14 @@ benchmark-pde-4.0/
 ├── scorecards/<slug>.yml     # curated numbers, findings and conduct scores, one per run
 ├── consensus.yml             # which runs agree with each cross-model finding
 ├── synthesis.yml             # the "bottom line" text
+├── prompt_v1.md              # the benchmark prompt given to every agent
 ├── Claude Opus 5.5 - 10_October_2026/
 ├── Gemini Flash 3.8 high - 10_October_2026/
-└── GPT-6.1 Sol Medium - 10_October_2026/
+├── GPT-6.1 Sol Medium - 10_October_2026/
+└── Gemini Carbon Medium - 22_November_2026/
 ```
 
-Each model folder holds that agent's deliverables: `data_audit.md`, `analysis_plan.md`, `code/`, `results.md`, `critical_assessment.md`, `comparison_with_literature.md`, `analysis_log.md` and `README.md`.
+The agents all received the same task, in `prompt_v1.md`. Each model folder holds that agent's deliverables: `data_audit.md`, `analysis_plan.md`, `code/`, `results.md`, `critical_assessment.md`, `comparison_with_literature.md`, `analysis_log.md` and `README.md`.
 
 ## Render
 
@@ -46,5 +48,5 @@ The report finds the model folders by itself. It looks first in `params: bench_d
 
 ## Notes
 
-- Python virtual environments (`.venv/`) and render byproducts are excluded by `.gitignore`. The dataset itself is public on Zenodo and is not needed to render the report.
+- Python virtual environments (`.venv/`), render byproducts and local copies of the dataset (such as `Gemini Carbon Medium - 22_November_2026/data/`) are excluded by `.gitignore`. The dataset itself is public on Zenodo and is not needed to render the report. When a new agent folder includes its own copy of the data, add that folder to `.gitignore` too.
 - The conduct scores and the synthesis were drafted by Claude, which belongs to the same model family as one of the evaluated agents. Treat them as editable judgements, not ground truth.
