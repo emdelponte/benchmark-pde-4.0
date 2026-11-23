@@ -229,7 +229,9 @@ skill_vs_rigor <- function(runs) {
   pts <- Filter(function(r) has_auc(r$weather_model) && !is.na(rubric_total(r)), runs)
   if (length(pts) < 2) return("")
   W <- 560; H <- 340; l <- 56; b <- 46; t <- 20; rt <- 20
-  xmax <- 2 * nrow(RUBRIC); xlo <- xmax * 0.4; ylo <- 0.55; yhi <- 0.72
+  xmax <- 2 * nrow(RUBRIC)
+  tot <- vapply(pts, rubric_total, 0)
+  xlo <- min(xmax * 0.4, max(0, 2 * floor((min(tot) - 2) / 2))); ylo <- 0.55; yhi <- 0.72
   X <- function(v) l + (v - xlo) / (xmax - xlo) * (W - l - rt)
   Y <- function(v) H - b - (v - ylo) / (yhi - ylo) * (H - b - t)
   s <- sprintf('<svg class="viz" viewBox="0 0 %d %d" role="img" aria-label="Predictive skill versus scientific conduct">', W, H)
@@ -241,27 +243,51 @@ skill_vs_rigor <- function(runs) {
                       l, W - rt, Y(v), Y(v), l - 8, Y(v) + 4, v))
   s <- c(s, sprintf('<text x="%.1f" y="%d" class="lab-s" text-anchor="middle">Scientific-conduct score (0–%d, rubric below)</text>', (l + W - rt) / 2, H - 8, xmax),
          sprintf('<text transform="translate(14 %.1f) rotate(-90)" class="lab-s" text-anchor="middle">Weather-only LOYO AUC</text>', (t + H - b) / 2))
-  # Spread runs that land on (nearly) the same spot: markers side by side, labels stacked.
-  px <- vapply(pts, function(r) X(rubric_total(r)), 0); py <- vapply(pts, function(r) Y(r$weather_model$auc), 0)
-  grp <- seq_along(pts)
-  for (i in seq_along(pts)) for (j in seq_len(i - 1))
-    if (abs(px[i] - px[j]) < 12 && abs(py[i] - py[j]) < 12) { grp[i] <- grp[j]; break }
-  dx <- dy <- numeric(length(pts))
+  n <- length(pts)
+  px <- X(tot); py <- vapply(pts, function(r) Y(r$weather_model$auc), 0)
+  # Runs on the very same spot sit side by side.
+  for (i in seq_len(n)) {
+    same <- which(abs(px - px[i]) < 1 & abs(py - py[i]) < 1)
+    if (length(same) > 1 && i == same[1]) px[same] <- px[same] + (seq_along(same) - (length(same) + 1) / 2) * 16
+  }
+  # Labels whose text would collide are stacked into one block, each with its colour dot.
+  lw <- vapply(pts, function(r) nchar(r$model) * 7 + 14, 0)
+  right <- px + 11 + lw <= W - rt               # label to the right of its dot when it fits, else to the left
+  lx0 <- ifelse(right, px + 11, px - 11)
+  grp <- seq_len(n)
+  for (i in seq_len(n)) for (j in seq_len(i - 1)) {
+    ov <- abs(py[i] - py[j]) < 16 &&
+      max(ifelse(right[i], lx0[i], lx0[i] - lw[i]), ifelse(right[j], lx0[j], lx0[j] - lw[j])) <
+      min(ifelse(right[i], lx0[i] + lw[i], lx0[i]), ifelse(right[j], lx0[j] + lw[j], lx0[j]))
+    if (ov) grp[grp == grp[i]] <- grp[j]
+  }
+  lab <- character(0)
   for (g in unique(grp)) {
-    k <- which(grp == g); n <- length(k)
-    if (n > 1) { off <- (seq_len(n) - (n + 1) / 2); dx[k] <- off * 16; dy[k] <- off * 17 }
+    k <- which(grp == g)
+    if (length(k) == 1) {
+      lab <- c(lab, sprintf('<text x="%.1f" y="%.1f" class="lab" text-anchor="%s">%s</text>',
+                            lx0[k], py[k] + 4, if (right[k]) "start" else "end", esc(pts[[k]]$model)))
+    } else {
+      k <- k[order(py[k])]
+      left <- min(px[k]) - 14 - max(lw[k]) >= l   # stack on the left if it fits, else on the right
+      ax <- if (left) min(px[k]) - 14 else max(px[k]) + 14
+      cy <- mean(py[k]); m <- length(k)
+      for (q in seq_len(m)) {
+        yy <- cy + (q - (m + 1) / 2) * 17
+        lab <- c(lab, sprintf('<circle cx="%.1f" cy="%.1f" r="4" fill="%s"/><text x="%.1f" y="%.1f" class="lab" text-anchor="%s">%s</text>',
+                              ax, yy, pts[[k[q]]]$color, if (left) ax - 8 else ax + 8, yy + 4,
+                              if (left) "end" else "start", esc(pts[[k[q]]]$model)))
+      }
+    }
   }
-  for (i in seq_along(pts)) {
+  for (i in seq_len(n)) {
     r <- pts[[i]]
-    x <- px[i] + dx[i]; y <- py[i]
-    lx <- min(px[grp == grp[i]] + dx[grp == grp[i]]) - 11; ly <- py[i] + dy[i] + 4
-    tip <- sprintf("%s: conduct %d/%d, AUC %s", r$model, as.integer(rubric_total(r)), xmax, fmt(r$weather_model$auc))
+    tip <- sprintf("%s: conduct %d/%d, AUC %s", r$model, as.integer(tot[i]), xmax, fmt(r$weather_model$auc))
     s <- c(s, sprintf(paste0('<g class="pt"><title>%s</title><circle cx="%.1f" cy="%.1f" r="14" fill="transparent"/>',
-                             '<circle cx="%.1f" cy="%.1f" r="7" fill="%s" class="ring"/>',
-                             '<text x="%.1f" y="%.1f" class="lab" text-anchor="end">%s</text></g>'),
-                      esc(tip), x, y, x, y, r$color, lx, ly, esc(r$model)))
+                             '<circle cx="%.1f" cy="%.1f" r="7" fill="%s" class="ring"/></g>'),
+                      esc(tip), px[i], py[i], px[i], py[i], r$color))
   }
-  paste0('<figure class="viz-wrap narrow">', paste(c(s, "</svg>"), collapse = ""), "</figure>")
+  paste0('<figure class="viz-wrap narrow">', paste(c(s, lab, "</svg>"), collapse = ""), "</figure>")
 }
 
 # ----------------------------------------------------------------------------- tables / cards

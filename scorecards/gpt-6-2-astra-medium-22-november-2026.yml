@@ -1,0 +1,51 @@
+# Curated scorecard. Folder: "GPT-6.2 Astra Medium - 22_November_2026"
+model: GPT-6.2 Astra Medium
+provider: OpenAI
+tagline: The strict auditor, again
+verdict: Reaches the same model and numbers as GPT-6.1 by a cleaner route, with the tightest timing rule and the most cautious claims of any run. Its folder lacks the code and outputs its README promises.
+outcome: "No binary outcome is documented, so no confirmatory model was fitted. It defined S ≥ 10% (273 / 726) as an explicitly supplementary target before any literature, and checked S > 10%."
+
+weather_model:
+  label: "Low-VPD hours (d −15…−5) + mean T (d −20…−10)"
+  n_params: 2
+  auc: 0.616
+  ci_method: "no AUC CI; a year-bootstrap CI is given only for the Brier gain over prevalence (0.0073, −0.0038 to 0.0185)"
+  brier: 0.193
+  cal_slope: 0.77
+
+host_model: null
+
+validation: "Leave-one-year-out, leave-one-state-out and a forward chronological split (train ≤ 2008, test 2009–2015). Year-cluster sandwich SEs with a t(31) reference, plus an equal-weight-per-cluster sensitivity fit."
+
+key_findings:
+  - "Moisture alone barely beats prevalence (LOYO AUC 0.541, slope 0.38). Earlier temperature is what lifts the model to 0.616 (OR 2.19 per 5 °C)."
+  - "The Brier gain over prevalence is small, and its year- and state-bootstrap intervals both include zero."
+  - "In the forward test (2009–2015) AUC is 0.628, but mean risk is 5 points too high. North Dakota is over-predicted (34% vs 23%)."
+  - "Shifting the temperature window 5 days earlier, or changing the moisture metric or VPD threshold, lowers AUC to 0.56–0.59."
+  - "Its equation and numbers match GPT-6.1's exactly, reached independently from the same timing rule."
+
+strengths:
+  - "Strictest timing: anthesis is 00 UTC, so every window touching day 0 (306 of 329 fields) is excluded."
+  - "Treats the outcome as supplementary rather than documented, and keeps that label through to the literature check."
+  - "The only run with a forward chronological test, and it reports the overprediction that test reveals."
+  - "Its claims are carefully worded: it says the gain is 'small and uncertain' and that no operational use is established."
+
+concerns:
+  - "Its README lists code/*.py and many output CSVs and a figure, but the folder holds only the Markdown files and requirements.txt. The analysis cannot be re-run from this folder."
+  - "No AUC confidence interval and no host model."
+  - "The additive model was chosen using grouped validation scores, which it acknowledges cannot also validate that choice."
+  - "Short reports: the literature comparison covers three papers."
+
+literature: "Cites three papers with DOIs, confirms the 273 / 999 count only after the fact, and refuses to attribute the gap to the published Brier scores to any one cause without refitting on identical folds."
+
+rubric:
+  audit: 2
+  timing: 2
+  outcome: 2
+  parsimony: 2
+  validation: 2
+  calibration: 2
+  sensitivity: 2
+  negatives: 2
+  literature: 2
+  claims: 2

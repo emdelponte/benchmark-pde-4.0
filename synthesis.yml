@@ -1,59 +1,59 @@
 # Curated cross-model synthesis. "covers" lists the runs this text was written for;
 # the report warns automatically when a newer run exists that is not covered here.
-written: 2026-11-22
+written: 2026-11-23
 covers:
   - claude-opus-5-5-10-october-2026
   - gpt-6-1-sol-medium-10-october-2026
   - gemini-flash-3-8-high-10-october-2026
   - gemini-carbon-medium-22-november-2026
   - deepseek-flash-4-1-high-22-november-2026
+  - gpt-6-2-astra-medium-22-november-2026
 bottom_line: >-
-  Five agents, one verdict. With weather known by anthesis, a parsimonious
+  Six agents, one verdict. With weather known by anthesis, a parsimonious
   logistic model ranks FHB epidemic risk only weakly when whole seasons are
-  held out (AUC 0.62 to 0.67). Adding cultivar resistance lifts it to about
-  0.69 to 0.72. Where they really differ is in scientific conduct, not in
-  their numbers.
+  held out (AUC 0.62 to 0.67). Adding cultivar resistance and corn residue
+  lifts it to about 0.69 to 0.72. Where they really differ is in scientific
+  conduct, not in their numbers.
 points:
-  - title: "One answer, five routes"
+  - title: "One answer, many routes"
     text: >-
-      Each agent picked a different moisture variable: mean RH (Claude),
-      low-VPD hours ending 5 days early (GPT), 12-h "overnight" RH (Gemini
-      Flash), 10-day VPD plus earlier warmth (Gemini Carbon) and hours above
-      90% RH (DeepSeek). Yet the year-out AUCs land within 0.06 of each other,
-      and their CIs overlap heavily. The signal looks real but small, and it is
-      not tied to any particular variable.
+      The agents picked different moisture variables: mean RH (Claude),
+      low-VPD hours ending 5 days early (both GPT runs), 12-h "overnight" RH
+      (Gemini Flash), 10-day VPD plus earlier warmth (Gemini Carbon) and hours
+      above 90% RH (DeepSeek). Yet the year-out AUCs land within about 0.06 of
+      each other, and their CIs overlap heavily. The signal looks real but
+      small, and it is not tied to any particular variable.
   - title: "Weather sorts seasons, not fields"
     text: >-
       DeepSeek found that weather-only models rank years well (AUC 0.64 to 0.72
       across year means) but plots within a year barely better than chance
       (median 0.53 to 0.58), and that dropping 2009 alone collapses the signal.
-      Resistance and corn residue work the other way, within years. So a
-      weather model here is a season-level risk index, not a plot-level
-      classifier.
+      GPT-6.2's forward test (train to 2008, test 2009–2015) shows the same
+      model over-predicting later seasons. A weather model here is a
+      season-level risk index, not a plot-level classifier.
   - title: "The gap to the literature is the headline"
     text: >-
       The published models in this dataset lineage report AUCs of 0.80 to 0.90,
       but they use bigger candidate sets, host and post-anthesis terms, and
-      random or stratified CV. All five agents land roughly 0.13 to 0.28 lower
+      random or stratified CV. The agents land roughly 0.13 to 0.28 lower
       under season-grouped validation. Claude puts the clustering effect at
       about 0.03 for its model, while Gemini Carbon shows random CV inflating
       flexible models by 0.04 to 0.21. Comparing the published models under
       one year-out protocol is the obvious follow-up.
   - title: "Behaviour is what separates them"
     text: >-
-      GPT stopped at the undocumented outcome and at day-0 windows. DeepSeek
-      pre-registered its own 5% outcome, kept a weak primary model rather than
-      swap in a better one, and aligned to 10% only after the literature,
-      labelled as post hoc. Claude ran broad, honest validations. Gemini Carbon
-      ran the most complete validation but trimmed its final model after seeing
-      the data. Gemini Flash reported clearly, but its claims outrun its
-      evidence, and both Gemini runs still write "proof".
+      The two GPT runs reached the same equation and the same numbers
+      independently, and both refused to call S ≥ 10% a documented outcome or
+      to use day-0 windows. DeepSeek kept a weak pre-registered model rather
+      than swap in a better one. Claude ran broad, honest validations, and
+      Gemini Carbon the most complete ones, though it trimmed its final model
+      after seeing the data. Gemini Flash's claims outrun its evidence.
   - title: "Temperature: the earlier window wins"
     text: >-
       Temperature in the last week or two before anthesis is null for Claude,
-      Gemini Carbon and DeepSeek (DeepSeek's heat-hours term included). An
-      earlier window (days −20 to −10) is positive for Claude, GPT and Gemini
-      Carbon, which makes it the best supported weather lead after moisture.
+      Gemini Carbon and DeepSeek. An earlier window (days −20 to −10) is
+      positive for Claude, both GPT runs and Gemini Carbon, which makes it the
+      best supported weather lead after moisture.
 caveat: >-
   The conduct scores and this synthesis were written by Claude, which belongs
   to the same model family as one of the contestants. Treat them as a starting

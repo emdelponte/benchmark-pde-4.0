@@ -74,7 +74,7 @@ if (length(syn)) {
 
 ## How well did they predict?
 
-The task was to predict an FHB epidemic (FHB index ≥ 10%) with logistic regression on at most three weather terms available by anthesis. Each agent also fitted an optional model that adds cultivar resistance (and corn residue for Claude, Gemini Carbon and DeepSeek), which is also known at anthesis. All values are pooled out-of-fold predictions with one year held out at a time. Hover a mark to see Brier score, calibration slope and how each CI was computed.
+The task was to predict an FHB epidemic (FHB index ≥ 10%) with logistic regression on at most three weather terms available by anthesis. Most agents also fitted an optional model that adds cultivar resistance (and corn residue for Claude, Gemini Carbon and DeepSeek), which is also known at anthesis. All values are pooled out-of-fold predictions with one year held out at a time. Hover a mark to see Brier score, calibration slope and how each CI was computed.
 
 ```{r}
 #| output: asis
@@ -83,7 +83,7 @@ html_block(auc_forest(runs))
 
 ::: {.callout-note collapse="true"}
 ## Why the CIs are not equally wide
-Claude and GPT bootstrap whole years, and Gemini Carbon bootstraps clusters, which respects the seasonal clustering. Gemini Flash does not state its CI method, and its intervals are about half as wide on the same data, which suggests row-level resampling. Read Gemini Flash's intervals as optimistic. Gemini Carbon reports no CI for its host model. DeepSeek resamples weather records rather than years, and its values shown here are its post-hoc S ≥ 10% re-run, since its pre-registered outcome was S ≥ 5%. The shaded band shows published AUCs for this dataset lineage (Shah et al. 2021–2023; Peng et al. 2024). Those models use larger predictor sets, often post-anthesis or host terms, and random or stratified CV, so they are a different estimand and not a target.
+Claude and GPT bootstrap whole years, and Gemini Carbon bootstraps clusters, which respects the seasonal clustering. Gemini Flash does not state its CI method, and its intervals are about half as wide on the same data, which suggests row-level resampling. Read Gemini Flash's intervals as optimistic. Gemini Carbon reports no CI for its host model. DeepSeek resamples weather records rather than years, and its values shown here are its post-hoc S ≥ 10% re-run, since its pre-registered outcome was S ≥ 5%. GPT-6.2 Astra reports no AUC interval, so it shows as a point only. The shaded band shows published AUCs for this dataset lineage (Shah et al. 2021–2023; Peng et al. 2024). Those models use larger predictor sets, often post-anthesis or host terms, and random or stratified CV, so they are a different estimand and not a target.
 :::
 
 ```{r}

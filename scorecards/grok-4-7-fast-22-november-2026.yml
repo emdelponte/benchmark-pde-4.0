@@ -1,0 +1,53 @@
+# Curated scorecard. Folder: "Grok 4.7 Fast - 22_November_2026"
+model: Grok 4.7 Fast
+provider: xAI
+tagline: The quick sketch
+verdict: A plausible one-variable answer (mean RH plus host terms), but most of the plan was never run, and its headline AUC is pooled over only the years that had both outcomes.
+outcome: "S ≥ 10% (273 / 726), described in the audit as 'documented' in the literature and cross-checked against the papers before modelling."
+
+weather_model:
+  label: "M1: mean RH (d −7…0)"
+  n_params: 1
+  auc: 0.658
+  ci_method: "no CI; pooled only over years with both outcomes; Brier reported only as a fold mean (0.213, worse than the 0.199 prevalence baseline)"
+
+host_model:
+  label: "M3: RH7 + resistance + corn residue"
+  n_params: 3
+  auc: 0.720
+  ci_method: "no CI; pooled over years with both outcomes"
+
+validation: "Leave-one-year-out only, skipping held-out years with a single outcome class. Leave-one-state-out was planned but not run."
+
+key_findings:
+  - "Mean RH over the 7 days before anthesis is the strongest single predictor; overnight RH is almost identical (r ≈ 0.98)."
+  - "Adding a temperature-hours term (T15307) does not help (p ≈ 0.45)."
+  - "Resistance (OR 0.55 per class step) and corn residue (OR 2.08) lift pooled AUC from 0.658 to 0.720."
+  - "Fold-level AUC varies widely (SD ≈ 0.23–0.26 across years)."
+
+strengths:
+  - "Parsimonious: one weather term, and a clear statement that pre-anthesis weather alone cannot support a high-accuracy forecast."
+  - "Grouped by year rather than by row, and explains why random CV would be optimistic."
+  - "Its literature section makes the useful point that much published skill comes from post-anthesis weather."
+
+concerns:
+  - "Most planned analyses were not run: leave-one-state-out, threshold, winter-wheat, window, random-forest and decision-curve checks are absent, and analysis_log.md does not say so."
+  - "No out-of-fold calibration: the only calibration check is on training data. Its mean fold Brier (0.213) is worse than predicting prevalence (0.199), which goes unremarked."
+  - "Candidates were ranked by full-sample univariate AUC before the LOYO evaluation."
+  - "The audit cites the published papers for the outcome before any modelling, so literature informed the analysis."
+  - "No discussion of the UTC timing of day 0 or of the 12-h 'overnight' windows. It calls its timing 'strict adherence'."
+  - "Its folder keeps copies of the dataset files at the top level."
+
+literature: "Lists five papers without figures or DOIs and makes qualitative comparisons only. Its point about post-anthesis information is reasonable, but it is not quantified."
+
+rubric:
+  audit: 1
+  timing: 1
+  outcome: 0
+  parsimony: 2
+  validation: 1
+  calibration: 0
+  sensitivity: 0
+  negatives: 1
+  literature: 1
+  claims: 1
